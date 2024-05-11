@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 535c62a6b1bd4ce89e6845f1f50ae4c6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _dieParticlesPrefab: {fileID: 198451450481698882, guid: 51c076fda76b4954baed1c119d949578,
+      type: 3}
+  - _damageable: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
