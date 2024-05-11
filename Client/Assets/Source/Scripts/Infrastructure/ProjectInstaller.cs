@@ -1,4 +1,6 @@
 ﻿using Reflex.Core;
+using Source.Scripts.GameCore.Battle.Services.Enemy;
+using Source.Scripts.GameCore.Battle.Services.Player;
 using Source.Scripts.GameCore.Deck.Service;
 using Source.Scripts.Infrastructure.Services;
 using Source.Scripts.Infrastructure.Services.Authorization;
@@ -27,8 +29,10 @@ namespace Source.Scripts.Infrastructure
                 .AddSingleton(typeof(AuthorizationService), typeof(IAuthorizationService))
                 .AddSingleton(typeof(DeckService), typeof(IDeckService))
                 .AddSingleton(typeof(RatingService), typeof(IRatingService))
+                .AddSingleton(typeof(PlayerService), typeof(IPlayerService))
+                .AddSingleton(typeof(EnemyService), typeof(IEnemyService))
                 .Build()
-                .Single<IGameStateMachine>()
+                .Resolve<IGameStateMachine>()
                 .Enter<BootstrapState>();
     }
 }

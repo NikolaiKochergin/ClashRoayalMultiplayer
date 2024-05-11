@@ -14,11 +14,11 @@ namespace Source.Scripts.Infrastructure.States
             _container = container;
 
         public void Enter() => 
-            _container.Single<SceneLoader>().Load("BootScene", () => OnLoaded().Forget());
+            _container.Resolve<SceneLoader>().Load("BootScene", () => OnLoaded().Forget());
 
         private async UniTaskVoid OnLoaded()
         {
-            await _container.Single<IStaticDataLoader>().Load();
+            await _container.Resolve<IStaticDataLoader>().Load();
             
             await UniTask
                 .WhenAll(Enumerable
@@ -27,7 +27,7 @@ namespace Source.Scripts.Infrastructure.States
                         .Initialize()));
             
             _container
-                .Single<IGameStateMachine>()
+                .Resolve<IGameStateMachine>()
                 .Enter<AuthorizationState>();
         }
 

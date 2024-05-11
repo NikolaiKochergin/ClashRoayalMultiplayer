@@ -15,6 +15,8 @@ namespace Source.Scripts.Infrastructure.States
                 [typeof(BootstrapState)] = container.Construct<BootstrapState>(),
                 [typeof(AuthorizationState)] = container.Construct<AuthorizationState>(),
                 [typeof(LobbyState)] = container.Construct<LobbyState>(),
+                [typeof(LoadLevelState)] = container.Construct<LoadLevelState>(),
+                [typeof(BattleState)] = container.Construct<BattleState>(),
             };
 
         public void Enter<TState>() where TState : class, IState
