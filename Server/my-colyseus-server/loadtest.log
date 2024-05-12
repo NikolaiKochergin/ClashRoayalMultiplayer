@@ -1,0 +1,12 @@
+[12.05.2024, 13:22:09] @colyseus/loadtest
+endpoint: ws://localhost:2567
+roomName: my_room
+numClients: 2
+logLevel: all
+output: E:\Unity_Projects_E\EccentricMultiplayer\ClashRoayalMultiplayer\Server\my-colyseus-server\loadtest.log
+[12.05.2024, 13:22:09] ServerError: offline
+[12.05.2024, 13:22:09] ServerError: offline
+[12.05.2024, 13:22:39] Finished. Summary:
+    Successful connections: 0
+    Failed connections: 2
+    Total errors: 2

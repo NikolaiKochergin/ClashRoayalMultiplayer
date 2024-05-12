@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ServerSettings
   m_EditorClassIdentifier: 
   colyseusServerAddress: localhost
-  colyseusServerPort: 2567
+  colyseusServerPort: 2666
   useSecureProtocol: 0
   _requestHeaders: []

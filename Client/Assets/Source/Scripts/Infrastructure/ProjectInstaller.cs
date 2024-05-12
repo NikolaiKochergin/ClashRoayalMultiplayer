@@ -9,6 +9,7 @@ using Source.Scripts.Infrastructure.Services.Network;
 using Source.Scripts.Infrastructure.Services.Rating;
 using Source.Scripts.Infrastructure.Services.StaticData;
 using Source.Scripts.Infrastructure.States;
+using Source.Scripts.Multiplayer;
 using Source.Scripts.UI.Factory;
 using Source.Scripts.UI.Services.Windows;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace Source.Scripts.Infrastructure
                 .AddSingleton(typeof(StaticDataService), typeof(IStaticDataService), typeof(IStaticDataLoader))
                 .AddSingleton(typeof(UIFactory), typeof(IUIFactory), typeof(IInitializable))
                 .AddSingleton(typeof(InputService), typeof(IInputService), typeof(IInitializable))
+                .AddSingleton(typeof(MultiplayerService), typeof(IMultiplayerService), typeof(IInitializable))
                 .AddSingleton(typeof(WindowService), typeof(IWindowService))
                 .AddSingleton(typeof(NetworkService), typeof(INetworkService))
                 .AddSingleton(typeof(AuthorizationService), typeof(IAuthorizationService))
