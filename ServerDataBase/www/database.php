@@ -1,4 +1,6 @@
 <?php
+    if(interface_exists('RedBeanPHP\Logger')) return;
+
     require 'RedbeanPHP/rb-mysql.php';
 
     R::setup('mysql:host=localhost;dbname=testdb', '<databaselogin>', '<databasepassword>');
