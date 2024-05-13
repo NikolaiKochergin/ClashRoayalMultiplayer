@@ -29,8 +29,9 @@ export class GameRoom extends Room<GameRoomState> {
     }
     this.state.createPlayer(client.sessionId);
 
-    if(this.clients.length < 2)
+    if(this.clients.length < 2){
       return;
+    }
 
     this.broadcast(Library.getReady);
     this.awaitStart = this.clock.setTimeout(()=>{
@@ -45,7 +46,7 @@ export class GameRoom extends Room<GameRoomState> {
       } catch (error) {
         this.broadcast(Library.cancelStart);
       }
-    }, 1000);
+    }, 100000);
   }
 
   onLeave (client: Client, consented: boolean) {

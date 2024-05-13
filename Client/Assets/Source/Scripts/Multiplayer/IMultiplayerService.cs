@@ -1,10 +1,15 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
+using Source.Scripts.Multiplayer.Data;
 
 namespace Source.Scripts.Multiplayer
 {
     public interface IMultiplayerService
     {
+        event Action GetReadyHappened;
+        event Action<Decks> StartGameHappened;
+        event Action CancelStartHappened;
         UniTask Connect();
-        UniTask CancelConnect();
+        UniTask Leave();
     }
 }

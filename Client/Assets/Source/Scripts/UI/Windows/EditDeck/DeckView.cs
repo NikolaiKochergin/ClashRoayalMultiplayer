@@ -24,10 +24,6 @@ namespace Source.Scripts.UI.Windows.EditDeck
                 _factory
                     .Create(_cardPrefab, _cardsContainer)
                     .Initialize(card);
-            
-            // foreach (CardInfo card in cards)
-            //     Instantiate(_cardPrefab, _cardsContainer)
-            //         .Initialize(card);
         }
     }
 }

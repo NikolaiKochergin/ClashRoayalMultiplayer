@@ -13,12 +13,13 @@ namespace Source.Scripts.Multiplayer
 {
     public class MultiplayerService : IMultiplayerService, IInitializable
     {
-        private readonly IAuthorizationService _authorization;
         private const string ServerSettings = "ServerSettings";
         private const string RoomName = "game_room";
         private const string GetReady = "GetReady";
         private const string StartGame = "Start";
         private const string CancelStart = "CancelStart";
+        
+        private readonly IAuthorizationService _authorization;
         
         private ColyseusSettings _serverSettings;
         private ColyseusClient _client;
@@ -48,13 +49,21 @@ namespace Source.Scripts.Multiplayer
             };
             
             _room = await _client.JoinOrCreate<GameRoomState>(RoomName, data);
-            _room.OnMessage<object>(GetReady, _ => GetReadyHappened?.Invoke());
-            _room.OnMessage<string>(StartGame, jsonDecks => StartGameHappened?.Invoke(JsonUtility.FromJson<Decks>(jsonDecks)));
-            _room.OnMessage<object>(CancelStart, _ => CancelStartHappened?.Invoke());
+            _room.OnMessage<string>(GetReady, _ => GetReadyHappened?.Invoke());
+            _room.OnMessage<string>(CancelStart, _ => CancelStartHappened?.Invoke());
+            _room.OnMessage<string>(StartGame, jsonDecks =>
+            {
+                Debug.Log(_room.SessionId + jsonDecks);
+                
+                StartGameHappened?.Invoke(JsonUtility.FromJson<Decks>(jsonDecks));
+            });
         }
 
-        public async UniTask CancelConnect()
+        public async UniTask Leave()
         {
+            if(_room == null)
+                return;
+            
             await _room.Leave();
             _room = null;
         }

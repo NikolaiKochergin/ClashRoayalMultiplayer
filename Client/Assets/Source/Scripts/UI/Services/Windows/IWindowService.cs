@@ -1,4 +1,3 @@
-using Source.Scripts.UI.StaticData;
 using Source.Scripts.UI.Windows;
 
 namespace Source.Scripts.UI.Services.Windows

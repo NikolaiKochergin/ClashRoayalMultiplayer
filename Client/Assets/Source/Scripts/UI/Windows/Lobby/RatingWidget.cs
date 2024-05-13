@@ -3,7 +3,7 @@ using Source.Scripts.Infrastructure.Services.Rating;
 using TMPro;
 using UnityEngine;
 
-namespace Source.Scripts.UI.Windows.StartGame
+namespace Source.Scripts.UI.Windows.Lobby
 {
     public class RatingWidget : MonoBehaviour
     {

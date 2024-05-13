@@ -8,17 +8,29 @@ namespace Source.Scripts.UI.CommonElements
     {
         [SerializeField] private Button _button;
 
-        private void Awake() => 
+        private void Awake()
+        {
             AddListener(OnButtonClicked);
+            Initialize();
+        }
 
-        private void OnDestroy() => 
+        private void OnDestroy()
+        {
+            Cleanup();
             RemoveListener(OnButtonClicked);
+        }
 
         public void AddListener(UnityAction action) =>
             _button.onClick.AddListener(action);
 
         public void RemoveListener(UnityAction action) =>
             _button.onClick.RemoveListener(action);
+
+        public void SetInteractable(bool value) => 
+            _button.interactable = value;
+        
+        protected virtual void Initialize() { }
+        protected virtual void Cleanup() { }
 
         protected virtual void OnButtonClicked() { }
 

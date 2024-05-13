@@ -8,5 +8,6 @@
         Lobby = 3,
         EditDeck = 4,
         LockScreen = 5,
+        MatchMaking = 6,
     }
 }

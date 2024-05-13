@@ -3,7 +3,7 @@ using Source.Scripts.GameCore.Deck.Service;
 using Source.Scripts.UI.Windows.EditDeck;
 using UnityEngine;
 
-namespace Source.Scripts.UI.Windows.StartGame
+namespace Source.Scripts.UI.Windows.Lobby
 {
     public class LobbyWindow : WindowBase
     {

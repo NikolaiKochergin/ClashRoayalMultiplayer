@@ -4,6 +4,6 @@ namespace Source.Scripts.Infrastructure.Services
 {
     public interface IInitializable
     {
-        UniTask Initialize();
+        public UniTask Initialize();
     }
 }

@@ -23,13 +23,12 @@ namespace Source.Scripts.Infrastructure.States
         public void Enter()
         {
             _windows.OpenWindow(WindowId.LockScreen);
-            _deck.LoadDeck(OnDeckLoaded);
             _rating.LoadRating();
+            _deck.LoadDeck(OnDeckLoaded);
         }
 
-        public void Exit()
-        {
-        }
+        public void Exit() => 
+            _windows.CloseWindow(WindowId.Lobby);
 
         private void OnDeckLoaded()
         {
