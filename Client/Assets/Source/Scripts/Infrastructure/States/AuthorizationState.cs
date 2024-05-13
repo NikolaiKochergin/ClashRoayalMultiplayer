@@ -1,8 +1,10 @@
 ﻿using Source.Scripts.UI.Services.Windows;
 using Source.Scripts.UI.Windows;
+using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
 {
+    [Preserve]
     public class AuthorizationState : IState
     {
         private readonly IWindowService _windows;

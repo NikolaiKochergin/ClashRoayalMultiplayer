@@ -1,5 +1,6 @@
 ﻿using Reflex.Attributes;
 using Source.Scripts.Infrastructure.States;
+using Source.Scripts.Infrastructure.States.Machine;
 using Source.Scripts.UI.CommonElements;
 
 namespace Source.Scripts.UI.Windows.StartGame
@@ -13,6 +14,6 @@ namespace Source.Scripts.UI.Windows.StartGame
             _gameStateMachine = gameStateMachine;
 
         protected override void OnButtonClicked() => 
-            _gameStateMachine.Enter<LoadLevelState, string>("BattleScene");
+            _gameStateMachine.Enter<MatchMakingState>();
     }
 }

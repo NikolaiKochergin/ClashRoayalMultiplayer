@@ -26,7 +26,7 @@ namespace Source.Scripts.UI.Windows.EditDeck
         private void CloseLockScreen()
         {
             _windows.CloseWindow(WindowId.LockScreen);
-            _windows.OpenWindow(WindowId.StartGame);
+            _windows.OpenWindow(WindowId.Lobby);
         }
     }
 }

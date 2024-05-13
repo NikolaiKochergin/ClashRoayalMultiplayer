@@ -3,9 +3,11 @@ using Source.Scripts.GameCore.Battle.MapLogic;
 using Source.Scripts.GameCore.Battle.Services.Enemy;
 using Source.Scripts.GameCore.Battle.Services.Player;
 using UnityEngine.SceneManagement;
+using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
 {
+    [Preserve]
     public class BattleState : IState
     {
         private readonly IPlayerService _player;

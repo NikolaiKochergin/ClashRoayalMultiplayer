@@ -1,4 +1,4 @@
-import assert from "assert";
+import * as assert from "assert";
 import { ColyseusTestServer, boot } from "@colyseus/testing";
 
 // import your "app.config.ts" file here.

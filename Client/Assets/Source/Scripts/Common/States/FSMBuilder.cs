@@ -5,8 +5,8 @@ namespace Source.Scripts.Common.States
 {
     public class FSMBuilder
     {
-        private readonly Dictionary<Type, FSMState> _states;
         private readonly FSM _fsm;
+        private readonly Dictionary<Type, FSMState> _states;
 
         public FSMBuilder()
         {

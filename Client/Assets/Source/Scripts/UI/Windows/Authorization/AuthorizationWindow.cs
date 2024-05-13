@@ -1,6 +1,7 @@
 ﻿using Reflex.Attributes;
 using Source.Scripts.Infrastructure.Services.Authorization;
 using Source.Scripts.Infrastructure.States;
+using Source.Scripts.Infrastructure.States.Machine;
 using Source.Scripts.UI.Extensions;
 using TMPro;
 using UnityEngine;

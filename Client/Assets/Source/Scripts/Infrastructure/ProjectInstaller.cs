@@ -9,6 +9,7 @@ using Source.Scripts.Infrastructure.Services.Network;
 using Source.Scripts.Infrastructure.Services.Rating;
 using Source.Scripts.Infrastructure.Services.StaticData;
 using Source.Scripts.Infrastructure.States;
+using Source.Scripts.Infrastructure.States.Machine;
 using Source.Scripts.Multiplayer;
 using Source.Scripts.UI.Factory;
 using Source.Scripts.UI.Services.Windows;
@@ -21,7 +22,6 @@ namespace Source.Scripts.Infrastructure
         public void InstallBindings(ContainerBuilder builder) =>
             builder
                 .AddSingleton(typeof(SceneLoader))
-                .AddSingleton(typeof(GameStateMachine), typeof(IGameStateMachine))
                 .AddSingleton(typeof(StaticDataService), typeof(IStaticDataService), typeof(IStaticDataLoader))
                 .AddSingleton(typeof(UIFactory), typeof(IUIFactory), typeof(IInitializable))
                 .AddSingleton(typeof(InputService), typeof(IInputService), typeof(IInitializable))
@@ -34,7 +34,14 @@ namespace Source.Scripts.Infrastructure
                 .AddSingleton(typeof(PlayerService), typeof(IPlayerService))
                 .AddSingleton(typeof(EnemyService), typeof(IEnemyService))
                 .Build()
-                .Resolve<IGameStateMachine>()
+                .AddGameStateMachine()
+                .Add<BootstrapState>()
+                .Add<LoadLevelState>()
+                .Add<AuthorizationState>()
+                .Add<LobbyState>()
+                .Add<MatchMakingState>()
+                .Add<BattleState>()
+                .Build()
                 .Enter<BootstrapState>();
     }
 }

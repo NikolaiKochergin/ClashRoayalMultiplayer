@@ -1,4 +1,4 @@
-﻿namespace Source.Scripts.Infrastructure.States
+﻿namespace Source.Scripts.Infrastructure.States.Machine
 {
     public interface IGameStateMachine
     {

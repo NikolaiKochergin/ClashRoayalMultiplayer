@@ -3,9 +3,12 @@ using Cysharp.Threading.Tasks;
 using Reflex.Core;
 using Source.Scripts.Infrastructure.Services;
 using Source.Scripts.Infrastructure.Services.StaticData;
+using Source.Scripts.Infrastructure.States.Machine;
+using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
 {
+    [Preserve]
     public class BootstrapState : IState
     {
         private readonly Container _container;

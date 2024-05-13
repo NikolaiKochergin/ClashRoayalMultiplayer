@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 1563702962828532254}
   - component: {fileID: 5543414560408065007}
   m_Layer: 5
-  m_Name: Window_StartGame
+  m_Name: Window_Lobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

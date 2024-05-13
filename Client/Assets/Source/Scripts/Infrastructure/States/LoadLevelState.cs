@@ -1,20 +1,26 @@
-﻿using Reflex.Core;
+﻿using Source.Scripts.Infrastructure.States.Machine;
+using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
 {
+    [Preserve]
     public class LoadLevelState : IPayloadedState<string>
     {
-        private readonly Container _container;
+        private readonly SceneLoader _sceneLoader;
+        private readonly IGameStateMachine _gameStateMachine;
 
-        public LoadLevelState(Container container) => 
-            _container = container;
-
+        public LoadLevelState(SceneLoader sceneLoader, IGameStateMachine gameStateMachine)
+        {
+            _sceneLoader = sceneLoader;
+            _gameStateMachine = gameStateMachine;
+        }
+        
         public void Enter(string sceneName) => 
-            _container.Resolve<SceneLoader>().Load(sceneName, OnLoaded);
+            _sceneLoader.Load(sceneName, OnLoaded);
 
         public void Exit() { }
 
         private void OnLoaded() => 
-            _container.Resolve<IGameStateMachine>().Enter<BattleState>();
+            _gameStateMachine.Enter<BattleState>();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Source.Scripts.UI.Windows.StartGame
 {
-    public class StartGameWindow : WindowBase
+    public class LobbyWindow : WindowBase
     {
         [SerializeField] private DeckView _deckView;
         

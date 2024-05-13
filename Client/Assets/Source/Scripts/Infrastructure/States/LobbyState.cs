@@ -2,9 +2,11 @@
 using Source.Scripts.Infrastructure.Services.Rating;
 using Source.Scripts.UI.Services.Windows;
 using Source.Scripts.UI.Windows;
+using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
 {
+    [Preserve]
     public class LobbyState : IState
     {
         private readonly IWindowService _windows;
@@ -32,7 +34,7 @@ namespace Source.Scripts.Infrastructure.States
         private void OnDeckLoaded()
         {
             _windows.CloseWindow(WindowId.LockScreen);
-            _windows.OpenWindow(WindowId.StartGame);
+            _windows.OpenWindow(WindowId.Lobby);
         }
     }
 }

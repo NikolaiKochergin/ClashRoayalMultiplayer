@@ -1,23 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Reflex.Core;
 
-namespace Source.Scripts.Infrastructure.States
+namespace Source.Scripts.Infrastructure.States.Machine
 {
     public class GameStateMachine : IGameStateMachine
     {
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(Container container) =>
-            _states = new Dictionary<Type, IExitableState>
-            {
-                [typeof(BootstrapState)] = container.Construct<BootstrapState>(),
-                [typeof(AuthorizationState)] = container.Construct<AuthorizationState>(),
-                [typeof(LobbyState)] = container.Construct<LobbyState>(),
-                [typeof(LoadLevelState)] = container.Construct<LoadLevelState>(),
-                [typeof(BattleState)] = container.Construct<BattleState>(),
-            };
+        public GameStateMachine(Dictionary<Type, IExitableState> states) => 
+            _states = states;
 
         public void Enter<TState>() where TState : class, IState
         {
