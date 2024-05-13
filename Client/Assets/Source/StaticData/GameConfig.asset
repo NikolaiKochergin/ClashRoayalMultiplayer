@@ -24,31 +24,55 @@ MonoBehaviour:
     _cards:
     - <Name>k__BackingField: Archer
       <Id>k__BackingField: 1
-      <Icon>k__BackingField: {fileID: 21300000, guid: f45c396bb0ecb374db31600c853f0fca, type: 3}
+      <Icon>k__BackingField: {fileID: 21300000, guid: f45c396bb0ecb374db31600c853f0fca,
+        type: 3}
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u043B\u0443\u0447\u043D\u0438\u043A."
     - <Name>k__BackingField: Warrior
       <Id>k__BackingField: 2
-      <Icon>k__BackingField: {fileID: 21300000, guid: 6c206d8e57d7ac54799b8f9e91438bf8, type: 3}
+      <Icon>k__BackingField: {fileID: 21300000, guid: 6c206d8e57d7ac54799b8f9e91438bf8,
+        type: 3}
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u0432\u043E\u0438\u043D."
     - <Name>k__BackingField: Golem
       <Id>k__BackingField: 3
-      <Icon>k__BackingField: {fileID: 21300000, guid: a76af6ee85e1153468f20d85636d09d1, type: 3}
+      <Icon>k__BackingField: {fileID: 21300000, guid: a76af6ee85e1153468f20d85636d09d1,
+        type: 3}
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u0433\u043E\u043B\u0435\u043C."
     - <Name>k__BackingField: Archer Elder
       <Id>k__BackingField: 4
-      <Icon>k__BackingField: {fileID: 21300000, guid: 3a4023c46cafd10428e602b9765ccccc, type: 3}
-      <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u043F\u044B\u0442\u043D\u044B\u0439
-        \u043B\u0443\u0447\u043D\u0438\u043A."
+      <Icon>k__BackingField: {fileID: 21300000, guid: 3a4023c46cafd10428e602b9765ccccc,
+        type: 3}
+      <Description>k__BackingField: "\u042D\u0442\u043E \u043B\u0443\u0447\u043D\u0438\u043A
+        \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Warrior Elder
       <Id>k__BackingField: 5
-      <Icon>k__BackingField: {fileID: 21300000, guid: 7caac1fd2193e0744a7b478f4f7c3ed4, type: 3}
-      <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u043F\u044B\u0442\u043D\u044B\u0439
-        \u0432\u043E\u0438\u043D."
+      <Icon>k__BackingField: {fileID: 21300000, guid: 7caac1fd2193e0744a7b478f4f7c3ed4,
+        type: 3}
+      <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u043E\u0438\u043D
+        \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Golem Elder
       <Id>k__BackingField: 6
-      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7, type: 3}
-      <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u043F\u044B\u0442\u043D\u044B\u0439
-        \u0433\u043E\u043B\u0435\u043C."
+      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
+        type: 3}
+      <Description>k__BackingField: "\u042D\u0442\u043E \u0433\u043E\u043B\u0435\u043C
+        \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
+    - <Name>k__BackingField: Archer Grand Elder
+      <Id>k__BackingField: 7
+      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
+        type: 3}
+      <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
+        \u043B\u0443\u0447\u043D\u0438\u043A \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
+    - <Name>k__BackingField: Warrior Grand Elder
+      <Id>k__BackingField: 8
+      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
+        type: 3}
+      <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
+        \u0432\u043E\u0438\u043D \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
+    - <Name>k__BackingField: Golem Grand Elder
+      <Id>k__BackingField: 9
+      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
+        type: 3}
+      <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
+        \u0433\u043E\u043B\u0435\u043C \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."

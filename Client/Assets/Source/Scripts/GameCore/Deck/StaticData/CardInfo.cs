@@ -1,4 +1,5 @@
 ﻿using System;
+using Source.Scripts.GameCore.Battle.UnitLogic;
 using UnityEngine;
 
 namespace Source.Scripts.GameCore.Deck.StaticData
@@ -9,11 +10,12 @@ namespace Source.Scripts.GameCore.Deck.StaticData
         [field: SerializeField, Delayed] public string Name { get; private set; }
         [field: SerializeField, Delayed] public int Id { get; private set; }
         [field: SerializeField] public Sprite Icon { get; private set; }
+        [field: SerializeField] public UnitBase UnitPrefab { get; private set; }
         [field: SerializeField, TextArea(minLines: 2, maxLines: 5)] public string Description { get; private set; }
 
 #if UNITY_EDITOR
         public void Validate() => 
-            Name = Name.Trim(' ');
+            Name = Name.Trim();
 #endif
     }
 }

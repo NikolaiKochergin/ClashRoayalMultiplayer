@@ -13,5 +13,13 @@ namespace Source.Scripts.GameCore.Deck.StaticData
 
         public IReadOnlyDictionary<int, CardInfo> CardsMap =>
             _cards.ToDictionary(card => card.Id, card => card);
+        
+#if UNITY_EDITOR
+        public void Validate()
+        {
+            foreach (CardInfo card in _cards) 
+                card.Validate();
+        } 
+#endif
     }
 }
