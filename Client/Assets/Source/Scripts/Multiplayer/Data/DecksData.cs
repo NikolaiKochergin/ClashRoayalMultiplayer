@@ -3,7 +3,7 @@
 namespace Source.Scripts.Multiplayer.Data
 {
     [Serializable]
-    public class Decks
+    public class DecksData
     {
         public string player1ID;
         public string[] player1;

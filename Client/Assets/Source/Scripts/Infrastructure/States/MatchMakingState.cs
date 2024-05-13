@@ -47,15 +47,12 @@ namespace Source.Scripts.Infrastructure.States
             
         }
 
-        private void OnStartGameHappened(Decks decks)
+        private void OnStartGameHappened()
         {
             _gameStateMachine.Enter<LoadLevelState, string>("BattleScene");
         }
 
-        private void OnCancelStartHappened()
-        {
-            Debug.Log("CANCEL");
+        private void OnCancelStartHappened() => 
             _gameStateMachine.Enter<LobbyState>();
-        }
     }
 }

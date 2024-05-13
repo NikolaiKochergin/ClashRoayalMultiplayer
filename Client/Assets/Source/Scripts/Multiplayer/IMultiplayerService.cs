@@ -7,7 +7,7 @@ namespace Source.Scripts.Multiplayer
     public interface IMultiplayerService
     {
         event Action GetReadyHappened;
-        event Action<Decks> StartGameHappened;
+        event Action StartGameHappened;
         event Action CancelStartHappened;
         UniTask Connect();
         UniTask Leave();

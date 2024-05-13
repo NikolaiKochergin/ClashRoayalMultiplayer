@@ -28,8 +28,11 @@ namespace Source.Scripts.Multiplayer
         public MultiplayerService(IAuthorizationService authorization) => 
             _authorization = authorization;
 
+        public IReadOnlyList<int> PlayerCardIDs { get; private set; }
+        public IReadOnlyList<int> EnemyCardIDs { get; private set; }
+
         public event Action GetReadyHappened;
-        public event Action<Decks> StartGameHappened;
+        public event Action StartGameHappened;
         public event Action CancelStartHappened;
 
         public async UniTask Initialize()
@@ -51,11 +54,22 @@ namespace Source.Scripts.Multiplayer
             _room = await _client.JoinOrCreate<GameRoomState>(RoomName, data);
             _room.OnMessage<string>(GetReady, _ => GetReadyHappened?.Invoke());
             _room.OnMessage<string>(CancelStart, _ => CancelStartHappened?.Invoke());
-            _room.OnMessage<string>(StartGame, jsonDecks =>
+            _room.OnMessage<string>(StartGame, decksJson =>
             {
-                Debug.Log(_room.SessionId + jsonDecks);
+                DecksData decksData = JsonUtility.FromJson<DecksData>(decksJson);
                 
-                StartGameHappened?.Invoke(JsonUtility.FromJson<Decks>(jsonDecks));
+                if (decksData.player1ID == _room.SessionId)
+                {
+                    PlayerCardIDs = GetParsedIDs(decksData.player1);
+                    EnemyCardIDs = GetParsedIDs(decksData.player2);
+                }
+                else
+                {
+                    PlayerCardIDs = GetParsedIDs(decksData.player2);
+                    EnemyCardIDs = GetParsedIDs(decksData.player1);
+                }
+                
+                StartGameHappened?.Invoke();
             });
         }
 
@@ -70,5 +84,14 @@ namespace Source.Scripts.Multiplayer
 
         private async UniTask LoadServerSettings() => 
             _serverSettings = await Addressables.LoadAssetAsync<ColyseusSettings>(ServerSettings);
+
+        private static List<int> GetParsedIDs(IEnumerable<string> ids)
+        {
+            List<int> deck = new();
+            foreach (string cardId in ids)
+                if(int.TryParse(cardId, out int id))
+                    deck.Add(id);
+            return deck;
+        }
     }
 }
