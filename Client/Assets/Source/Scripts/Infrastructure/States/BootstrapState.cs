@@ -11,13 +11,15 @@ namespace Source.Scripts.Infrastructure.States
     [Preserve]
     public class BootstrapState : IState
     {
+        private const string BootSceneName = "BootScene";
+        
         private readonly Container _container;
 
         public BootstrapState(Container container) => 
             _container = container;
 
         public void Enter() => 
-            _container.Resolve<SceneLoader>().Load("BootScene", () => OnLoaded().Forget());
+            _container.Resolve<SceneLoader>().Load(BootSceneName, () => OnLoaded().Forget());
 
         private async UniTaskVoid OnLoaded()
         {

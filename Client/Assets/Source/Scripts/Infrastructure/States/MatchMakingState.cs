@@ -1,10 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
+using Source.Scripts.Infrastructure.Services.StaticData;
 using Source.Scripts.Infrastructure.States.Machine;
 using Source.Scripts.Multiplayer;
-using Source.Scripts.Multiplayer.Data;
 using Source.Scripts.UI.Services.Windows;
 using Source.Scripts.UI.Windows;
-using UnityEngine;
 using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
@@ -14,15 +13,18 @@ namespace Source.Scripts.Infrastructure.States
     {
         private readonly IMultiplayerService _multiplayer;
         private readonly IGameStateMachine _gameStateMachine;
+        private readonly IStaticDataService _staticData;
         private readonly IWindowService _windows;
 
         public MatchMakingState(
             IMultiplayerService multiplayer,
             IGameStateMachine gameStateMachine,
+            IStaticDataService staticData,
             IWindowService windows)
         {
             _multiplayer = multiplayer;
             _gameStateMachine = gameStateMachine;
+            _staticData = staticData;
             _windows = windows;
         }
         
@@ -49,7 +51,7 @@ namespace Source.Scripts.Infrastructure.States
 
         private void OnStartGameHappened()
         {
-            _gameStateMachine.Enter<LoadLevelState, string>("BattleScene");
+            _gameStateMachine.Enter<LoadLevelState, string>(_staticData.ForBattleScene());
         }
 
         private void OnCancelStartHappened() => 

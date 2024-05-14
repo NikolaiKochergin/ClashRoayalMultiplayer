@@ -46,7 +46,7 @@ export class GameRoom extends Room<GameRoomState> {
       } catch (error) {
         this.broadcast(Library.cancelStart);
       }
-    }, 100000);
+    }, 1000);
   }
 
   onLeave (client: Client, consented: boolean) {

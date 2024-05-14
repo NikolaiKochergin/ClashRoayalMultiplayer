@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using Source.Scripts.GameCore.Deck.StaticData;
 using Source.Scripts.StaticData;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace Source.Scripts.Infrastructure.Services.StaticData
@@ -22,6 +23,13 @@ namespace Source.Scripts.Infrastructure.Services.StaticData
 
         public URL ForURL() => 
             _gameConfig.URL;
+
+        public string ForBattleScene()
+        {
+            Debug.Log(">>>>>> " + _gameConfig.BattleScene.AssetGUID);
+            
+            return _gameConfig.BattleScene.AssetGUID;
+        }
 
         public int ForHandCapacity() => 
             _gameConfig.Deck.HandCapacity;

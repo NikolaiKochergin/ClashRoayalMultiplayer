@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Source.Scripts.GameCore.Deck.StaticData;
+using Source.Scripts.StaticData.References;
 using UnityEngine;
 
 namespace Source.Scripts.StaticData
@@ -10,6 +11,7 @@ namespace Source.Scripts.StaticData
         private const int UndefinedKey = 0;
         
         [field: SerializeField] public URL URL { get; private set; }
+        [field: SerializeField] public AssetReferenceScene BattleScene { get; private set; }
         [field: SerializeField] public DeckConfig Deck { get; private set; }
 
 #if UNITY_EDITOR

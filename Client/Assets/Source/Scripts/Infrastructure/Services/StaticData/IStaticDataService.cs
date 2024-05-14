@@ -8,5 +8,6 @@ namespace Source.Scripts.Infrastructure.Services.StaticData
         public CardInfo ForCard(int id);
         int ForHandCapacity();
         URL ForURL();
+        string ForBattleScene();
     }
 }

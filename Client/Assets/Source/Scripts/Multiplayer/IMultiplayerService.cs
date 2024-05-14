@@ -1,6 +1,5 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using Source.Scripts.Multiplayer.Data;
 
 namespace Source.Scripts.Multiplayer
 {
