@@ -6,6 +6,8 @@ namespace Source.Scripts.UI.Windows
     {
         [SerializeField] private Canvas _canvas;
 
+        public float ScaleFactor => _canvas.scaleFactor;
+
         public void SetCanvas(Camera worldCamera) => 
             _canvas.worldCamera = worldCamera;
     }

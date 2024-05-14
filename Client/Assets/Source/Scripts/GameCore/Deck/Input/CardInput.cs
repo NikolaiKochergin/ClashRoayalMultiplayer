@@ -11,22 +11,22 @@ namespace Source.Scripts.GameCore.Deck.Input
         [SerializeField] private CardView _cardView;
         [SerializeField] private CanvasGroup _canvasGroup;
         
-        private Transform _uiRoot;
+        private UIRoot _uiRoot;
         public int Id => _cardView.Id;
         
         [Inject]
         private void Construct(UIRoot uiRoot) => 
-            _uiRoot = uiRoot.transform;
+            _uiRoot = uiRoot;
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             _canvasGroup.blocksRaycasts = false;
-            _cardView.transform.SetParent(_uiRoot);
+            _cardView.transform.SetParent(_uiRoot.transform);
             _cardView.transform.SetAsLastSibling();
         }
 
         public void OnDrag(PointerEventData eventData) =>
-            _cardView.transform.position = eventData.pointerCurrentRaycast.worldPosition;
+            ((RectTransform) _cardView.transform).anchoredPosition += eventData.delta / _uiRoot.ScaleFactor;
 
         public void OnEndDrag(PointerEventData eventData)
         {

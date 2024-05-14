@@ -45,8 +45,6 @@ namespace Source.Scripts.UI.Factory
                 throw new ArgumentException($"Window Config with id: {id} is not set in UI Config.");
             
             WindowBase prefab = (await _asset.Load<GameObject>(reference)).GetComponent<WindowBase>();
-
-            _asset.Load<ScriptableObject>(reference);
                 
             return InstantiateAndInject(prefab, UIRoot.transform);
         }
