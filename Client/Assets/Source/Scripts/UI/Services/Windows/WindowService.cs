@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Source.Scripts.UI.Factory;
 using Source.Scripts.UI.Windows;
 
@@ -7,26 +8,24 @@ namespace Source.Scripts.UI.Services.Windows
     public class WindowService : IWindowService
     {
         private readonly IUIFactory _factory;
-        private readonly Dictionary<WindowId, WindowBase> _openedWindows = new Dictionary<WindowId, WindowBase>();
+        private readonly Dictionary<WindowId, WindowBase> _openedWindows = new();
 
         public WindowService(IUIFactory factory) => 
             _factory = factory;
 
-        public void OpenWindow(WindowId id)
+        public async UniTask OpenWindow(WindowId id)
         {
-            if (_openedWindows.ContainsKey(id))
-                return;
-            
-            _openedWindows.Add(id, _factory.CreateWindow(id));
+            if (_openedWindows.TryAdd(id, null))
+                _openedWindows[id] = await _factory.CreateWindow(id);
         }
 
         public void CloseWindow(WindowId id)
         {
-            if(_openedWindows.Remove(id, out WindowBase window) && window != null)
+            if(_openedWindows.Remove(id, out WindowBase window))
                 window.Close();
         }
 
-        public void Cleanup()
+        public void CloseAll()
         {
             foreach (WindowId id in _openedWindows.Keys) 
                 CloseWindow(id);

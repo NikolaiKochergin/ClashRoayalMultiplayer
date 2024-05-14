@@ -4,6 +4,8 @@ using Cysharp.Threading.Tasks;
 using Reflex.Core;
 using Reflex.Injectors;
 using Source.Scripts.Infrastructure.Services;
+using Source.Scripts.Infrastructure.Services.AssetManagement;
+using Source.Scripts.StaticData.References;
 using Source.Scripts.UI.StaticData;
 using Source.Scripts.UI.Windows;
 using UnityEngine;
@@ -18,12 +20,16 @@ namespace Source.Scripts.UI.Factory
         private const string UIRootName = "UIRoot";
         private const string UIConfig = "UIConfig";
 
-        private readonly Container _container;
-        
-        private IReadOnlyDictionary<WindowId, WindowBase> _windowsMap;
+        private Container _container;
+        private readonly IAsset _asset;
 
-        public UIFactory(Container container) => 
+        private IReadOnlyDictionary<WindowId, ComponentReference<WindowBase>> _windowsMap;
+
+        public UIFactory(Container container, IAsset asset)
+        {
             _container = container;
+            _asset = asset;
+        }
 
         public UIRoot UIRoot { get; private set; }
 
@@ -33,10 +39,14 @@ namespace Source.Scripts.UI.Factory
             await CreateUIRoot();
         }
 
-        public WindowBase CreateWindow(WindowId id)
+        public async UniTask<WindowBase> CreateWindow(WindowId id)
         {
-            if(_windowsMap.TryGetValue(id, out WindowBase prefab) == false || prefab == null)
-                throw new ArgumentException($"Window Config with id: {id} not found or window prefab is null.");
+            if(_windowsMap.TryGetValue(id, out ComponentReference<WindowBase> reference) == false)
+                throw new ArgumentException($"Window Config with id: {id} is not set in UI Config.");
+            
+            WindowBase prefab = (await _asset.Load<GameObject>(reference)).GetComponent<WindowBase>();
+
+            _asset.Load<ScriptableObject>(reference);
                 
             return InstantiateAndInject(prefab, UIRoot.transform);
         }
@@ -65,6 +75,8 @@ namespace Source.Scripts.UI.Factory
             Object.DontDestroyOnLoad(UIRoot);
             
             Addressables.Release(handle);
+
+            _container = _container.Scope(builder => builder.AddSingleton(UIRoot));
         }
     }
 }

@@ -14,6 +14,5 @@ namespace Source.Scripts.UI.Windows
             if(container.UIRoot)
                 container.UIRoot.SetCanvas(_worldCamera);
         }
-
     }
 }

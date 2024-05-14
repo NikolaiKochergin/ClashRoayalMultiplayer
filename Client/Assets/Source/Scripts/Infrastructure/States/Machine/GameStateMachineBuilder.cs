@@ -13,7 +13,8 @@ namespace Source.Scripts.Infrastructure.States.Machine
         public GameStateMachineBuilder(Container container)
         {
             _gameStateMachine = new GameStateMachine(_states);
-            _container = container.Scope(builder => builder.AddSingleton(_gameStateMachine, typeof(IGameStateMachine)));
+            _container = container.Scope(builder => builder
+                .AddSingleton(_gameStateMachine, typeof(IGameStateMachine)));
         }
 
         public GameStateMachineBuilder Add<TState>() where TState : IExitableState

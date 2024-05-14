@@ -1,5 +1,5 @@
 ﻿using Reflex.Attributes;
-using Source.Scripts.UI.Factory;
+using Source.Scripts.UI.Windows;
 using Source.Scripts.UI.Windows.EditDeck;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,10 +13,10 @@ namespace Source.Scripts.GameCore.Deck.Input
         
         private Transform _uiRoot;
         public int Id => _cardView.Id;
-
+        
         [Inject]
-        private void Construct(IUIFactory container) => 
-            _uiRoot = container.UIRoot.transform;
+        private void Construct(UIRoot uiRoot) => 
+            _uiRoot = uiRoot.transform;
 
         public void OnBeginDrag(PointerEventData eventData)
         {

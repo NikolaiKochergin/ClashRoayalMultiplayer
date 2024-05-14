@@ -29,7 +29,7 @@ export class GameRoom extends Room<GameRoomState> {
     }
     this.state.createPlayer(client.sessionId);
 
-    if(this.clients.length < 2){
+    if(this.clients.length < 1){
       return;
     }
 

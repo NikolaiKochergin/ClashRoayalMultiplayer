@@ -18,12 +18,14 @@ namespace Source.Scripts.Infrastructure.States
         public BootstrapState(Container container) => 
             _container = container;
 
-        public void Enter() => 
-            _container.Resolve<SceneLoader>().Load(BootSceneName, () => OnLoaded().Forget());
+        public void Enter() =>
+            OnEnter().Forget();
 
-        private async UniTaskVoid OnLoaded()
+        private async UniTaskVoid OnEnter()
         {
-            await _container.Resolve<IStaticDataLoader>().Load();
+            await UniTask.WhenAll(
+                _container.Resolve<SceneLoader>().LoadAsync(BootSceneName),
+                _container.Resolve<IStaticDataLoader>().Load());
             
             await UniTask
                 .WhenAll(Enumerable

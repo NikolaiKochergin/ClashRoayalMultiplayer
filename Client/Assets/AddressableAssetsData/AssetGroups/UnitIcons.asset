@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UnitIcons
+  m_EditorClassIdentifier: 
+  m_GroupName: UnitIcons
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ad438f4290f05fe469ba0b4aab9713da
+  m_SerializeEntries:
+  - m_GUID: 6f98649f403840847a4ac07ec1b2b9f1
+    m_Address: Golem_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c34a9d14bdcd0244aff504f376c0684
+    m_Address: Golem_Gray
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 772b4e2508f98e048b2ef90be162a08f
+    m_Address: Golem_Green
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63393bd7934dcf44b815c68cf051add7
+    m_Address: Warrior_Orange
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7caac1fd2193e0744a7b478f4f7c3ed4
+    m_Address: Warrior_Green
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a4023c46cafd10428e602b9765ccccc
+    m_Address: Warrior_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a76af6ee85e1153468f20d85636d09d1
+    m_Address: Golem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c206d8e57d7ac54799b8f9e91438bf8
+    m_Address: Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f45c396bb0ecb374db31600c853f0fca
+    m_Address: Archer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9b41788f1b75d8c4d897af71cd374a1f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 65230afd6e06b0749ad0a57d3b302395, type: 2}
+    - {fileID: 11400000, guid: 67056e234e923e54783df0d20dee3061, type: 2}

@@ -44,9 +44,8 @@ namespace Source.Scripts.Infrastructure.States
 
         private async UniTaskVoid OnEnter()
         {
-            _windows.OpenWindow(WindowId.MatchMaking);
             await _multiplayer.Connect();
-            
+            await _windows.OpenWindow(WindowId.MatchMaking);
         }
 
         private void OnStartGameHappened()

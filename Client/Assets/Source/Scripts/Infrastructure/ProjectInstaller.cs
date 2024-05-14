@@ -3,6 +3,7 @@ using Source.Scripts.GameCore.Battle.Services.Enemy;
 using Source.Scripts.GameCore.Battle.Services.Player;
 using Source.Scripts.GameCore.Deck.Service;
 using Source.Scripts.Infrastructure.Services;
+using Source.Scripts.Infrastructure.Services.AssetManagement;
 using Source.Scripts.Infrastructure.Services.Authorization;
 using Source.Scripts.Infrastructure.Services.Input;
 using Source.Scripts.Infrastructure.Services.Network;
@@ -23,6 +24,7 @@ namespace Source.Scripts.Infrastructure
             builder
                 .AddSingleton(typeof(SceneLoader))
                 .AddSingleton(typeof(StaticDataService), typeof(IStaticDataService), typeof(IStaticDataLoader))
+                .AddSingleton(typeof(Asset), typeof(IAsset), typeof(IInitializable), typeof(ICleanable))
                 .AddSingleton(typeof(UIFactory), typeof(IUIFactory), typeof(IInitializable))
                 .AddSingleton(typeof(InputService), typeof(IInputService), typeof(IInitializable))
                 .AddSingleton(typeof(MultiplayerService), typeof(IMultiplayerService), typeof(IInitializable))

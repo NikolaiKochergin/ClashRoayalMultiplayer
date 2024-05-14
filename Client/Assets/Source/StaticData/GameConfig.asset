@@ -29,64 +29,136 @@ MonoBehaviour:
     _cards:
     - <Name>k__BackingField: Archer
       <Id>k__BackingField: 1
-      <Icon>k__BackingField: {fileID: 21300000, guid: f45c396bb0ecb374db31600c853f0fca,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: f45c396bb0ecb374db31600c853f0fca
+        m_SubObjectName: Archer
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: 50979e050b46e4e44b920cb6d7bbfb54
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u043B\u0443\u0447\u043D\u0438\u043A."
     - <Name>k__BackingField: Warrior
       <Id>k__BackingField: 2
-      <Icon>k__BackingField: {fileID: 21300000, guid: 6c206d8e57d7ac54799b8f9e91438bf8,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: 6c206d8e57d7ac54799b8f9e91438bf8
+        m_SubObjectName: Warrior
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: b238203c51b71ce45a25eaf1ffeb6398
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u0432\u043E\u0438\u043D."
     - <Name>k__BackingField: Golem
       <Id>k__BackingField: 3
-      <Icon>k__BackingField: {fileID: 21300000, guid: a76af6ee85e1153468f20d85636d09d1,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: a76af6ee85e1153468f20d85636d09d1
+        m_SubObjectName: Golem
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: 516275d71bd78364296e47afc5324507
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u0433\u043E\u043B\u0435\u043C."
     - <Name>k__BackingField: Archer Elder
       <Id>k__BackingField: 4
-      <Icon>k__BackingField: {fileID: 21300000, guid: 3a4023c46cafd10428e602b9765ccccc,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: f45c396bb0ecb374db31600c853f0fca
+        m_SubObjectName: Archer
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: 50979e050b46e4e44b920cb6d7bbfb54
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u043B\u0443\u0447\u043D\u0438\u043A
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Warrior Elder
       <Id>k__BackingField: 5
-      <Icon>k__BackingField: {fileID: 21300000, guid: 7caac1fd2193e0744a7b478f4f7c3ed4,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: 3a4023c46cafd10428e602b9765ccccc
+        m_SubObjectName: Warrior_Blue
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: b238203c51b71ce45a25eaf1ffeb6398
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u043E\u0438\u043D
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Golem Elder
       <Id>k__BackingField: 6
-      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: 6f98649f403840847a4ac07ec1b2b9f1
+        m_SubObjectName: Golem_Blue
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: 516275d71bd78364296e47afc5324507
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u0433\u043E\u043B\u0435\u043C
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Archer Grand Elder
       <Id>k__BackingField: 7
-      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: f45c396bb0ecb374db31600c853f0fca
+        m_SubObjectName: Archer
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: 50979e050b46e4e44b920cb6d7bbfb54
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
         \u043B\u0443\u0447\u043D\u0438\u043A \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Warrior Grand Elder
       <Id>k__BackingField: 8
-      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: 63393bd7934dcf44b815c68cf051add7
+        m_SubObjectName: Warrior_Orange
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: b238203c51b71ce45a25eaf1ffeb6398
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
         \u0432\u043E\u0438\u043D \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Golem Grand Elder
       <Id>k__BackingField: 9
-      <Icon>k__BackingField: {fileID: 21300000, guid: 63393bd7934dcf44b815c68cf051add7,
-        type: 3}
-      <UnitPrefab>k__BackingField: {fileID: 0}
+      <IconReference>k__BackingField:
+        m_AssetGUID: 3c34a9d14bdcd0244aff504f376c0684
+        m_SubObjectName: Golem_Gray
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_EditorAssetChanged: 1
+      <UnitReference>k__BackingField:
+        m_AssetGUID: 516275d71bd78364296e47afc5324507
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
         \u0433\u043E\u043B\u0435\u043C \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."

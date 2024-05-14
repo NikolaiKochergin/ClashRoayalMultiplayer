@@ -14,20 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _windowsConfig:
   - <WindowId>k__BackingField: 1
-    <Prefab>k__BackingField: {fileID: 1024631388774314594, guid: 135c2d180c5789e468d69e62c7501e6c,
-      type: 3}
+    <Reference>k__BackingField:
+      m_AssetGUID: 135c2d180c5789e468d69e62c7501e6c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - <WindowId>k__BackingField: 2
-    <Prefab>k__BackingField: {fileID: 3781020365323827734, guid: aba3cd6d61d92964fbb8039920e0517c,
-      type: 3}
+    <Reference>k__BackingField:
+      m_AssetGUID: aba3cd6d61d92964fbb8039920e0517c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - <WindowId>k__BackingField: 3
-    <Prefab>k__BackingField: {fileID: 5543414560408065007, guid: e8c63bb6f3f170e41a5be142dfc64092,
-      type: 3}
+    <Reference>k__BackingField:
+      m_AssetGUID: e8c63bb6f3f170e41a5be142dfc64092
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - <WindowId>k__BackingField: 4
-    <Prefab>k__BackingField: {fileID: 3795268992717278976, guid: 328519b9a745516409e7eb6fb8a80404,
-      type: 3}
+    <Reference>k__BackingField:
+      m_AssetGUID: 328519b9a745516409e7eb6fb8a80404
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - <WindowId>k__BackingField: 5
-    <Prefab>k__BackingField: {fileID: 2146748837731854829, guid: d3c914085da4c7646a94a59f64443ad1,
-      type: 3}
+    <Reference>k__BackingField:
+      m_AssetGUID: d3c914085da4c7646a94a59f64443ad1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - <WindowId>k__BackingField: 6
-    <Prefab>k__BackingField: {fileID: 4814435629511896737, guid: cb8dc1b4adb40bf49a132e7d949f5876,
-      type: 3}
+    <Reference>k__BackingField:
+      m_AssetGUID: cb8dc1b4adb40bf49a132e7d949f5876
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - <WindowId>k__BackingField: 7
+    <Reference>k__BackingField:
+      m_AssetGUID: 1b0fecaf057564446ae225b8dd09a7ea
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1

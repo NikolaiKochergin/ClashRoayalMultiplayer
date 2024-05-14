@@ -16,7 +16,42 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: d322af3d040ac92438781bca755e54ac
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 135c2d180c5789e468d69e62c7501e6c
+    m_Address: Window_Authorization
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aba3cd6d61d92964fbb8039920e0517c
+    m_Address: Window_Registration
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8c63bb6f3f170e41a5be142dfc64092
+    m_Address: Window_Lobby
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 328519b9a745516409e7eb6fb8a80404
+    m_Address: Window_EditDeck
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3c914085da4c7646a94a59f64443ad1
+    m_Address: Window_LockScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb8dc1b4adb40bf49a132e7d949f5876
+    m_Address: Window_MatchMaking
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b0fecaf057564446ae225b8dd09a7ea
+    m_Address: Window_Battle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9b41788f1b75d8c4d897af71cd374a1f, type: 2}
   m_SchemaSet:

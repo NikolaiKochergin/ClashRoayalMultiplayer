@@ -9,5 +9,6 @@
         EditDeck = 4,
         LockScreen = 5,
         MatchMaking = 6,
+        Battle = 7,
     }
 }

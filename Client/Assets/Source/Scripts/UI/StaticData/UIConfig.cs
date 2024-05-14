@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Source.Scripts.StaticData.References;
 using Source.Scripts.UI.Windows;
 using UnityEngine;
 
@@ -10,13 +11,13 @@ namespace Source.Scripts.UI.StaticData
     {
         [SerializeField] private List<WindowConfig> _windowsConfig;
 
-        public IReadOnlyDictionary<WindowId, WindowBase> WindowsMap => 
-            _windowsConfig.ToDictionary(config => config.WindowId, config => config.Prefab);
+        public IReadOnlyDictionary<WindowId, ComponentReference<WindowBase>> WindowsMap => 
+            _windowsConfig.ToDictionary(config => config.WindowId, config => config.Reference);
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            IReadOnlyDictionary<WindowId, WindowBase> map = WindowsMap;
+            IReadOnlyDictionary<WindowId, ComponentReference<WindowBase>> map = WindowsMap;
             if(map.ContainsKey(WindowId.Unknown))
                 Debug.LogError($"Windows map contains key: {WindowId.Unknown}");
         }
