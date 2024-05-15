@@ -15,7 +15,7 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic
         
         private Health _health;
 
-        public virtual void Construct(Team enemyTeam) { }
+        public virtual void Construct(IReadOnlyTeam enemyTeam) { }
 
         public UnitStats Stats => _stats;
         public Transform Transform => transform;

@@ -8,12 +8,12 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic.AI
     {
         private readonly UnitBase _unit;
         private readonly FSM _fsm;
-        private readonly Team _enemyTeam;
+        private readonly IReadOnlyTeam _enemyTeam;
         private readonly TargetContainer _target;
 
         private float _distanceToCurrentTarget;
         
-        public GiantUnitBrain(UnitBase unit, FSM fsm, Team enemyTeam, TargetContainer target)
+        public GiantUnitBrain(UnitBase unit, FSM fsm, IReadOnlyTeam enemyTeam, TargetContainer target)
         {
             _unit = unit;
             _fsm = fsm;

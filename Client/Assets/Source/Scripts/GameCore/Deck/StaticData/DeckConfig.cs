@@ -8,8 +8,8 @@ namespace Source.Scripts.GameCore.Deck.StaticData
     [Serializable]
     public class DeckConfig
     {
-        [field: SerializeField, Min(0)] public int HandCapacity = 4;
-        [field: SerializeField, Min(0)] public int BattleDeckCapacity = 8;
+        [field: SerializeField, Min(1)] public int HandCapacity = 4;
+        [field: SerializeField, Min(2)] public int BattleDeckCapacity = 8;
         [SerializeField] private List<CardInfo> _cards;
 
         public IReadOnlyDictionary<string, CardInfo> CardsMap =>
@@ -20,6 +20,15 @@ namespace Source.Scripts.GameCore.Deck.StaticData
         {
             foreach (CardInfo card in _cards) 
                 card.Validate();
+
+            if (BattleDeckCapacity < HandCapacity + 1)
+                BattleDeckCapacity = HandCapacity + 1;
+
+            if (BattleDeckCapacity > _cards.Count)
+            {
+                Debug.LogError("The capacity of the deck should not be greater than the number of available cards.");
+                BattleDeckCapacity = _cards.Count;
+            }
         } 
 #endif
     }

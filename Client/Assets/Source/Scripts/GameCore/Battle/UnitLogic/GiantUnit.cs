@@ -17,7 +17,7 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic
         private TargetContainer _target;
         private GiantUnitBrain _brain;
         
-        public override void Construct(Team enemyTeam)
+        public override void Construct(IReadOnlyTeam enemyTeam)
         {
             base.Construct(enemyTeam);
             _attack.Construct(Stats);

@@ -22,8 +22,8 @@ namespace Source.Scripts.Infrastructure.States
         
         public void Enter()
         {
-            _player.Initialize();
-            _enemy.Initialize();
+            _player.Initialize(_enemy.Team);
+            _enemy.Initialize(_player.Team);
             _windows.OpenWindow(WindowId.Battle);
         }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Source.Scripts.GameCore.Battle
 {
-    public class Team
+    public class Team : IReadOnlyTeam
     {
         private readonly List<IDamageable> _towers = new List<IDamageable>();
         private readonly List<IDamageable> _walkingUnits = new List<IDamageable>();

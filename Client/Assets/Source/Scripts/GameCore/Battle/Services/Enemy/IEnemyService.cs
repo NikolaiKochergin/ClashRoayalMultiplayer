@@ -2,7 +2,7 @@
 {
     public interface IEnemyService
     {
-        Team Team { get; }
-        void Initialize();
+        IReadOnlyTeam Team { get; }
+        void Initialize(IReadOnlyTeam enemyTeam);
     }
 }

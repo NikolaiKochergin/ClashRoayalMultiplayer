@@ -1,7 +1,6 @@
-﻿using System.Linq;
+﻿using System;
 using Reflex.Attributes;
-using Source.Scripts.Infrastructure.Services.StaticData;
-using Source.Scripts.Multiplayer;
+using Source.Scripts.GameCore.Battle.Services.Player;
 using Source.Scripts.UI.Windows.EditDeck;
 using UnityEngine;
 
@@ -12,24 +11,28 @@ namespace Source.Scripts.UI.Windows.Battle
         [SerializeField] private DeckView _battleDeck;
         [SerializeField] private NextUnitPreview _nextUnitPreview;
         
-        private IMultiplayerService _multiplayer;
-        private IStaticDataService _staticData;
+        private IPlayerService _player;
 
         [Inject]
-        private void Construct(IMultiplayerService multiplayer, IStaticDataService staticData)
+        private void Construct(IPlayerService player) => 
+            _player = player;
+
+        private void Start()
         {
-            _multiplayer = multiplayer;
-            _staticData = staticData;
+            DisplayCards();
+            _player.NextCardUpdated += DisplayNextCard;
         }
 
-        private void Start() => 
-            DisplayCards();
+        private void OnDestroy() => 
+            _player.NextCardUpdated -= DisplayNextCard;
 
         private void DisplayCards()
         {
-            _battleDeck.Display(_multiplayer.PlayerCardIDs.Select(id => _staticData.ForCard(id)));
-            _nextUnitPreview.Display(_staticData.ForCard(_multiplayer.PlayerCardIDs[0]));
+            _battleDeck.Display(_player.InHandCards);
+            DisplayNextCard();
         }
 
+        private void DisplayNextCard() => 
+            _nextUnitPreview.Display(_player.NextCard);
     }
 }

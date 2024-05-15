@@ -38,7 +38,6 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic
         }
 
 #if UNITY_EDITOR
-
         private void OnDrawGizmos()
         {
             Handles.color = Color.green;
