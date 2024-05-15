@@ -26,7 +26,10 @@ namespace Source.Scripts.Infrastructure.Services.StaticData
         public string ForBattleScene() => 
             _gameConfig.BattleScene.AssetGUID;
 
-        public int ForHandCapacity() => 
+        public int ForBattleDeckCapacity() => 
+            _gameConfig.Deck.BattleDeckCapacity;
+
+        public int ForHandCapacity() =>
             _gameConfig.Deck.HandCapacity;
 
         public CardInfo ForCard(int id) =>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Reflex.Extensions;
+﻿using Reflex.Extensions;
 using Source.Scripts.GameCore.Battle.MapLogic;
 using Source.Scripts.GameCore.Battle.Services.Enemy;
 using Source.Scripts.GameCore.Battle.UnitLogic;

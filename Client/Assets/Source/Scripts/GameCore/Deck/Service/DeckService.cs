@@ -28,10 +28,10 @@ namespace Source.Scripts.GameCore.Deck.Service
             _authorization = authorization;
         }
         
-        public event Action Updated;
-
         public IEnumerable<CardInfo> SelectedCards => _selectedCards;
         public IEnumerable<CardInfo> AvailableCards => _availableCards;
+        
+        public event Action Updated;
 
         public void LoadDeck(Action onSuccess = null, Action<string> onError = null)
         {
@@ -128,7 +128,7 @@ namespace Source.Scripts.GameCore.Deck.Service
         {
             CardInfo card = _staticData.ForCard(cardId);
             
-            if (_selectedCards.Contains(card) || _selectedCards.Count >= _staticData.ForHandCapacity())
+            if (_selectedCards.Contains(card) || _selectedCards.Count >= _staticData.ForBattleDeckCapacity())
                 return false;
             
             _availableCards.Remove(card);

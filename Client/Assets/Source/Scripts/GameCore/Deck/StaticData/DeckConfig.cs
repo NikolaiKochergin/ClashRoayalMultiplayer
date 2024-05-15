@@ -8,7 +8,8 @@ namespace Source.Scripts.GameCore.Deck.StaticData
     [Serializable]
     public class DeckConfig
     {
-        [field: SerializeField, Min(0)] public int HandCapacity = 5;
+        [field: SerializeField, Min(0)] public int HandCapacity = 4;
+        [field: SerializeField, Min(0)] public int BattleDeckCapacity = 8;
         [SerializeField] private List<CardInfo> _cards;
 
         public IReadOnlyDictionary<int, CardInfo> CardsMap =>
