@@ -121,10 +121,8 @@ namespace Source.Scripts.GameCore.Deck.Service
             }
         }
 
-        public bool TrySelect(string cardId)
+        public bool TrySelect(CardInfo card)
         {
-            CardInfo card = _staticData.ForCard(cardId);
-            
             if (_selectedCards.Contains(card) || _selectedCards.Count >= _staticData.ForBattleDeckCapacity())
                 return false;
             
@@ -133,10 +131,8 @@ namespace Source.Scripts.GameCore.Deck.Service
             return true;
         }
 
-        public bool TryUnselect(string cardId)
+        public bool TryUnselect(CardInfo card)
         {
-            CardInfo card = _staticData.ForCard(cardId);
-            
             if (_selectedCards.Contains(card) == false) 
                 return false;
             

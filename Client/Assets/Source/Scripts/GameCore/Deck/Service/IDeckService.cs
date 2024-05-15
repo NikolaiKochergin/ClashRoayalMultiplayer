@@ -9,9 +9,9 @@ namespace Source.Scripts.GameCore.Deck.Service
         IEnumerable<CardInfo> SelectedCards { get; }
         IEnumerable<CardInfo> AvailableCards { get; }
         event Action Updated;
-        bool TrySelect(string cardId);
+        bool TrySelect(CardInfo card);
         void UpdateSelectedCards(Action onSuccess = null, Action<string> onError = null);
-        bool TryUnselect(string cardId);
+        bool TryUnselect(CardInfo card);
         void LoadDeck(Action onSuccess = null, Action<string> onError = null);
     }
 }

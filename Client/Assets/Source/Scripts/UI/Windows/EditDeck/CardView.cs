@@ -17,7 +17,7 @@ namespace Source.Scripts.UI.Windows.EditDeck
         
         private IAsset _asset;
 
-        public string Id { get; private set; }
+        public CardInfo Info { get; private set; }
 
         [Inject]
         private void Construct(IAsset asset) => 
@@ -25,7 +25,7 @@ namespace Source.Scripts.UI.Windows.EditDeck
 
         public void Display(CardInfo cardInfo)
         {
-            Id = cardInfo.Id;
+            Info = cardInfo;
             _name.SetText(cardInfo.Name);
             _description.SetText(cardInfo.Description);
             SetIcon(cardInfo.IconReference).Forget();

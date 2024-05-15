@@ -23,7 +23,7 @@ namespace Source.Scripts.GameCore.Deck
 
         public void OnBeginDrag(PointerEventData eventData) =>
             _tween = _cardViewTransform
-                .DOScale(_cardViewTransform.lossyScale * _scale, _duration);
+                .DOScale(_cardViewTransform.localScale * _scale, _duration);
 
         public void OnEndDrag(PointerEventData eventData)
         {

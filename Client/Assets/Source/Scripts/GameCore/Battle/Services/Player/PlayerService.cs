@@ -51,15 +51,15 @@ namespace Source.Scripts.GameCore.Battle.Services.Player
             InitFromMultiplayer();
         }
 
-        public async UniTask SpawnUnit(string id, Vector3 position)
+        public async UniTask SpawnUnit(CardInfo card, Vector3 position)
         {
-            CardInfo card = _inHandCards.First(c => c.Id == id);
-            _inHandCards.Remove(card);
+            _inHandCards[_inHandCards.IndexOf(card)] = NextCard;
             _battleDeck.Add(card);
             _battleDeck.Shuffle();
             SetNextCard();
             
             UnitBase unit = await _factory.Create<UnitBase>(card.UnitReference);
+            unit.transform.position = position;
             unit.Construct(_enemyTeam);
             _team.Add(unit);
         }

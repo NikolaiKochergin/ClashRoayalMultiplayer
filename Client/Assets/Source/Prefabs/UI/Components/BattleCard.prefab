@@ -75,6 +75,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardView: {fileID: 7888943381388493131}
   _canvasGroup: {fileID: 6724576174006328596}
+  _mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &1647084429883589363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardViewTransform: {fileID: 6954395950895607378}
   _scale: 0.5
+  _duration: 0.1
 --- !u!1 &3778645832769328049
 GameObject:
   m_ObjectHideFlags: 0
