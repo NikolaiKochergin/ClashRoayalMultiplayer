@@ -11,7 +11,7 @@ namespace Source.Scripts.Infrastructure.Services.StaticData
         private const string GameConfig = "GameConfig";
         
         private GameConfig _gameConfig;
-        private IReadOnlyDictionary<int, CardInfo> _cardsMap;
+        private IReadOnlyDictionary<string, CardInfo> _cardsMap;
 
         public async UniTask Load()
         {
@@ -32,7 +32,7 @@ namespace Source.Scripts.Infrastructure.Services.StaticData
         public int ForHandCapacity() =>
             _gameConfig.Deck.HandCapacity;
 
-        public CardInfo ForCard(int id) =>
+        public CardInfo ForCard(string id) =>
             _cardsMap.GetValueOrDefault(id);
     }
 }

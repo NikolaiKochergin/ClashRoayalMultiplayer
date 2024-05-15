@@ -28,7 +28,6 @@ namespace Source.Scripts.UI.Windows.Battle
         private void DisplayCards()
         {
             _battleDeck.Display(_multiplayer.PlayerCardIDs.Select(id => _staticData.ForCard(id)));
-
             _nextUnitPreview.Display(_staticData.ForCard(_multiplayer.PlayerCardIDs[0]));
         }
 

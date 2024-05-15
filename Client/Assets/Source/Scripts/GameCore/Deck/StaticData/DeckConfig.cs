@@ -12,7 +12,7 @@ namespace Source.Scripts.GameCore.Deck.StaticData
         [field: SerializeField, Min(0)] public int BattleDeckCapacity = 8;
         [SerializeField] private List<CardInfo> _cards;
 
-        public IReadOnlyDictionary<int, CardInfo> CardsMap =>
+        public IReadOnlyDictionary<string, CardInfo> CardsMap =>
             _cards.ToDictionary(card => card.Id, card => card);
         
 #if UNITY_EDITOR

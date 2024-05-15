@@ -12,10 +12,10 @@ namespace Source.Scripts.GameCore.Battle.Services.Enemy
         private readonly IPlayerService _player;
         public Team Team { get; } = new();
 
-        public EnemyService(IPlayerService player)
-        {
-            _player = player;
-        }
+        // public EnemyService(IPlayerService player)
+        // {
+        //     _player = player;
+        // }
 
         public void Initialize()
         {

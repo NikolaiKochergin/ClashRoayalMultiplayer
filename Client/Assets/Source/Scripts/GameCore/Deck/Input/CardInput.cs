@@ -12,7 +12,7 @@ namespace Source.Scripts.GameCore.Deck.Input
         [SerializeField] private CanvasGroup _canvasGroup;
         
         private UIRoot _uiRoot;
-        public int Id => _cardView.Id;
+        public string Id => _cardView.Id;
         
         [Inject]
         private void Construct(UIRoot uiRoot) => 

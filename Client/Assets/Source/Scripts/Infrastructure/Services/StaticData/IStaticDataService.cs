@@ -5,7 +5,7 @@ namespace Source.Scripts.Infrastructure.Services.StaticData
 {
     public interface IStaticDataService
     {
-        public CardInfo ForCard(int id);
+        public CardInfo ForCard(string id);
         int ForBattleDeckCapacity();
         URL ForURL();
         string ForBattleScene();

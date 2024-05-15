@@ -25,7 +25,8 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   <Deck>k__BackingField:
-    HandCapacity: 5
+    HandCapacity: 4
+    BattleDeckCapacity: 8
     _cards:
     - <Name>k__BackingField: Archer
       <Id>k__BackingField: 1

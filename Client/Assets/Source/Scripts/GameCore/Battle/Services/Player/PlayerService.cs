@@ -10,7 +10,7 @@ namespace Source.Scripts.GameCore.Battle.Services.Player
     {
         private readonly IEnemyService _enemy;
         public Team Team { get; } = new();
-
+        
         public PlayerService(IEnemyService enemy)
         {
             _enemy = enemy;

@@ -28,8 +28,8 @@ namespace Source.Scripts.Multiplayer
         public MultiplayerService(IAuthorizationService authorization) => 
             _authorization = authorization;
 
-        public IReadOnlyList<int> PlayerCardIDs { get; private set; }
-        public IReadOnlyList<int> EnemyCardIDs { get; private set; }
+        public IReadOnlyList<string> PlayerCardIDs { get; private set; }
+        public IReadOnlyList<string> EnemyCardIDs { get; private set; }
 
         public event Action GetReadyHappened;
         public event Action StartGameHappened;
@@ -60,13 +60,13 @@ namespace Source.Scripts.Multiplayer
                 
                 if (decksData.player1ID == _room.SessionId)
                 {
-                    PlayerCardIDs = GetParsedIDs(decksData.player1);
-                    EnemyCardIDs = GetParsedIDs(decksData.player2);
+                    PlayerCardIDs = decksData.player1;
+                    EnemyCardIDs = decksData.player2;
                 }
                 else
                 {
-                    PlayerCardIDs = GetParsedIDs(decksData.player2);
-                    EnemyCardIDs = GetParsedIDs(decksData.player1);
+                    PlayerCardIDs = decksData.player2;
+                    EnemyCardIDs = decksData.player1;
                 }
                 
                 StartGameHappened?.Invoke();
@@ -84,14 +84,5 @@ namespace Source.Scripts.Multiplayer
 
         private async UniTask LoadServerSettings() => 
             _serverSettings = await Addressables.LoadAssetAsync<ColyseusSettings>(ServerSettings);
-
-        private static List<int> GetParsedIDs(IEnumerable<string> ids)
-        {
-            List<int> deck = new();
-            foreach (string cardId in ids)
-                if(int.TryParse(cardId, out int id))
-                    deck.Add(id);
-            return deck;
-        }
     }
 }

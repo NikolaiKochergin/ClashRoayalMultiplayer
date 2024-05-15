@@ -8,7 +8,7 @@ namespace Source.Scripts.StaticData
     [CreateAssetMenu(fileName = "GameConfig", menuName = "Static Data/GameConfig", order = 0)]
     public class GameConfig : ScriptableObject
     {
-        private const int UndefinedKey = 0;
+        private const string UndefinedKey = "";
         
         [field: SerializeField] public URL URL { get; private set; }
         [field: SerializeField] public AssetReferenceScene BattleScene { get; private set; }
@@ -19,9 +19,9 @@ namespace Source.Scripts.StaticData
         {
             Deck.Validate();
             
-            IReadOnlyDictionary<int, CardInfo> map = Deck.CardsMap;
+            IReadOnlyDictionary<string, CardInfo> map = Deck.CardsMap;
             if(map.ContainsKey(UndefinedKey))
-                Debug.LogError($"Cards map contain key: {UndefinedKey}.");
+                Debug.LogError($"Cards map contain empty key.");
         }
 #endif
     }

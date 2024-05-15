@@ -17,7 +17,7 @@ namespace Source.Scripts.UI.Windows.EditDeck
         
         private IAsset _asset;
 
-        public int Id { get; private set; }
+        public string Id { get; private set; }
 
         [Inject]
         private void Construct(IAsset asset) => 

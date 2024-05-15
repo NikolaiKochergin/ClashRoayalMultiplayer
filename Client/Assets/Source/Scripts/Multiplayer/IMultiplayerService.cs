@@ -9,8 +9,8 @@ namespace Source.Scripts.Multiplayer
         event Action GetReadyHappened;
         event Action StartGameHappened;
         event Action CancelStartHappened;
-        IReadOnlyList<int> PlayerCardIDs { get; }
-        IReadOnlyList<int> EnemyCardIDs { get; }
+        IReadOnlyList<string> PlayerCardIDs { get; }
+        IReadOnlyList<string> EnemyCardIDs { get; }
         UniTask Connect();
         UniTask Leave();
     }

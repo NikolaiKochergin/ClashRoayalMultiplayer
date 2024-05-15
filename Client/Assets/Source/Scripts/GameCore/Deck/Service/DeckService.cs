@@ -66,13 +66,10 @@ namespace Source.Scripts.GameCore.Deck.Service
 
                 foreach (AvailableCards card in deckData.availableCards)
                 {
-                    if(int.TryParse(card.id, out int id) == false)
-                        return;
-                
                     if(deckData.selectedIDs.Contains(card.id))
-                        _selectedCards.Add(_staticData.ForCard(id));
+                        _selectedCards.Add(_staticData.ForCard(card.id));
                     else
-                        _availableCards.Add(_staticData.ForCard(id));
+                        _availableCards.Add(_staticData.ForCard(card.id));
                 }
 
                 onSuccess?.Invoke();
@@ -124,7 +121,7 @@ namespace Source.Scripts.GameCore.Deck.Service
             }
         }
 
-        public bool TrySelect(int cardId)
+        public bool TrySelect(string cardId)
         {
             CardInfo card = _staticData.ForCard(cardId);
             
@@ -136,7 +133,7 @@ namespace Source.Scripts.GameCore.Deck.Service
             return true;
         }
 
-        public bool TryUnselect(int cardId)
+        public bool TryUnselect(string cardId)
         {
             CardInfo card = _staticData.ForCard(cardId);
             
