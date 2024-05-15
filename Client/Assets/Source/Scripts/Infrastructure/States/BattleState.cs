@@ -1,10 +1,7 @@
-﻿using Reflex.Extensions;
-using Source.Scripts.GameCore.Battle.MapLogic;
-using Source.Scripts.GameCore.Battle.Services.Enemy;
+﻿using Source.Scripts.GameCore.Battle.Services.Enemy;
 using Source.Scripts.GameCore.Battle.Services.Player;
 using Source.Scripts.UI.Services.Windows;
 using Source.Scripts.UI.Windows;
-using UnityEngine.SceneManagement;
 using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
@@ -25,9 +22,8 @@ namespace Source.Scripts.Infrastructure.States
         
         public void Enter()
         {
-            MapInfo mapInfo = SceneManager.GetActiveScene().GetSceneContainer().Single<MapInfo>();
-            _player.Initialize(_enemy.Team, mapInfo.Player.Towers, mapInfo.Player.Units);
-            _enemy.Initialize(_player.Team, mapInfo.Enemy.Towers, mapInfo.Enemy.Units);
+            _player.Initialize();
+            _enemy.Initialize();
             _windows.OpenWindow(WindowId.Battle);
         }
 
