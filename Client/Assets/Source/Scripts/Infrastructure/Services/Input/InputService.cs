@@ -14,10 +14,6 @@ namespace Source.Scripts.Infrastructure.Services.Input
 
         public async UniTask Initialize() => 
             await CreateEventSystem();
-        
-        
-        
-        
 
         private async UniTask CreateEventSystem()
         {

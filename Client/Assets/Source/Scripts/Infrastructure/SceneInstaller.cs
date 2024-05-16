@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Source.Scripts.Infrastructure
 {
+    [RequireComponent(typeof(SceneScope))]
     public class SceneInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private MapInfo _mapInfo;

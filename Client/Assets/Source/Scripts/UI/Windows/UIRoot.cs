@@ -1,18 +1,34 @@
-﻿using UnityEngine;
+﻿using Reflex.Attributes;
+using Source.Scripts.Infrastructure.Services.Cameras;
+using UnityEngine;
 
 namespace Source.Scripts.UI.Windows
 {
+    [RequireComponent(typeof(Canvas))]
     public class UIRoot : MonoBehaviour
     {
         [SerializeField] private Canvas _canvas;
-        [SerializeField] private float _planeDistance = 5;
+        
+        private ICameraService _camera;
+
+        [Inject]
+        private void Construct(ICameraService camera) => 
+            _camera = camera;
 
         public float ScaleFactor => _canvas.scaleFactor;
 
-        public void SetCanvas(Camera worldCamera)
+        private void Start()
         {
-            _canvas.worldCamera = worldCamera;
-            _canvas.planeDistance = _planeDistance;
+            SetMainCamera();
+            _camera.MainChanged += SetMainCamera;
         }
+
+        private void SetMainCamera() => 
+            _canvas.worldCamera = _camera.Main;
+
+#if UNITY_EDITOR
+        private void Reset() => 
+            _canvas = GetComponent<Canvas>();
+#endif
     }
 }

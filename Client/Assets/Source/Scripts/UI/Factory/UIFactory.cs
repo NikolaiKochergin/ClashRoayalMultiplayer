@@ -67,12 +67,11 @@ namespace Source.Scripts.UI.Factory
         {
             AsyncOperationHandle<GameObject> handle = Addressables.LoadAssetAsync<GameObject>(UIRootName);
             GameObject uiRootPrefab = await handle;
+            Addressables.Release(handle);
             
             UIRoot = Object.Instantiate(uiRootPrefab).GetComponent<UIRoot>();
-            UIRoot.SetCanvas(Camera.main);
+            AttributeInjector.Inject(UIRoot, _container);
             Object.DontDestroyOnLoad(UIRoot);
-            
-            Addressables.Release(handle);
 
             _container = _container.Scope(builder => builder.AddSingleton(UIRoot));
         }
