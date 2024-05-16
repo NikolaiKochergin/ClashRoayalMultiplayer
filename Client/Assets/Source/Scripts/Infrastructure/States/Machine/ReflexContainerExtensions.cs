@@ -4,7 +4,7 @@ namespace Source.Scripts.Infrastructure.States.Machine
 {
     public static class ReflexContainerExtensions
     {
-        public static GameStateMachineBuilder AddGameStateMachine(this Container container) => 
-            new(container);
+        public static GameStateMachineBuilder AddGameStateMachine(this ContainerBuilder builder) => 
+            new(builder);
     }
 }

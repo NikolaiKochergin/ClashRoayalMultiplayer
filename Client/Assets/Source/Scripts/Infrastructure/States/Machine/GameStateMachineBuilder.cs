@@ -10,11 +10,12 @@ namespace Source.Scripts.Infrastructure.States.Machine
         private readonly GameStateMachine _gameStateMachine;
         private readonly Dictionary<Type, IExitableState> _states = new();
 
-        public GameStateMachineBuilder(Container container)
+        public GameStateMachineBuilder(ContainerBuilder builder)
         {
             _gameStateMachine = new GameStateMachine(_states);
-            _container = container.Scope(builder => builder
-                .AddSingleton(_gameStateMachine, typeof(IGameStateMachine)));
+            _container = builder
+                .AddSingleton(_gameStateMachine, typeof(IGameStateMachine))
+                .Build();
         }
 
         public GameStateMachineBuilder Add<TState>() where TState : IExitableState

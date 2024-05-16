@@ -24,6 +24,7 @@ namespace Source.Scripts.Infrastructure
     {
         public void InstallBindings(ContainerBuilder builder) =>
             builder
+                .AddSingleton(builder)
                 .AddSingleton(typeof(SceneLoader))
                 .AddSingleton(typeof(StaticDataService), typeof(IStaticDataService), typeof(IStaticDataLoader))
                 .AddSingleton(typeof(Asset), typeof(IAsset), typeof(IInitializable), typeof(ICleanable))
@@ -39,7 +40,6 @@ namespace Source.Scripts.Infrastructure
                 .AddSingleton(typeof(RatingService), typeof(IRatingService))
                 .AddSingleton(typeof(PlayerService), typeof(IPlayerService))
                 .AddSingleton(typeof(EnemyService), typeof(IEnemyService))
-                .Build()
                 .AddGameStateMachine()
                 .Add<BootstrapState>()
                 .Add<LoadLevelState>()
