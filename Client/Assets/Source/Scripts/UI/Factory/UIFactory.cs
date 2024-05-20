@@ -20,15 +20,14 @@ namespace Source.Scripts.UI.Factory
         private const string UIRootName = "UIRoot";
         private const string UIConfig = "UIConfig";
 
-        private Container _container;
-        private readonly ContainerBuilder _builder;
         private readonly IAsset _asset;
+        private Container _container;
 
         private IReadOnlyDictionary<WindowId, ComponentReference<WindowBase>> _windowsMap;
 
-        public UIFactory(ContainerBuilder builder, IAsset asset)
+        public UIFactory(Container container, IAsset asset)
         {
-            _builder = builder;
+            _container = container;
             _asset = asset;
         }
 
@@ -71,9 +70,9 @@ namespace Source.Scripts.UI.Factory
             Addressables.Release(handle);
             
             UIRoot = Object.Instantiate(uiRootPrefab).GetComponent<UIRoot>();
-            Object.DontDestroyOnLoad(UIRoot);
-            _container = _builder.AddSingleton(UIRoot).Build();
             AttributeInjector.Inject(UIRoot, _container);
+            Object.DontDestroyOnLoad(UIRoot);
+            _container = _container.Scope(builder => builder.AddSingleton(UIRoot));
         }
     }
 }

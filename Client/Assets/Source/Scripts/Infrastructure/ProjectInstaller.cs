@@ -24,7 +24,6 @@ namespace Source.Scripts.Infrastructure
     {
         public void InstallBindings(ContainerBuilder builder) =>
             builder
-                .AddSingleton(builder)
                 .AddSingleton(typeof(SceneLoader))
                 .AddSingleton(typeof(StaticDataService), typeof(IStaticDataService), typeof(IStaticDataLoader))
                 .AddSingleton(typeof(Asset), typeof(IAsset), typeof(IInitializable), typeof(ICleanable))

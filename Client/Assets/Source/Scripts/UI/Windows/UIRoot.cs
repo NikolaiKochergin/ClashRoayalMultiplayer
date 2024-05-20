@@ -12,8 +12,8 @@ namespace Source.Scripts.UI.Windows
         private ICameraService _camera;
 
         [Inject]
-        private void Construct(ICameraService camera) => 
-            _camera = camera;
+        private void Construct(ICameraService cameraService) => 
+            _camera = cameraService;
 
         public float ScaleFactor => _canvas.scaleFactor;
 
