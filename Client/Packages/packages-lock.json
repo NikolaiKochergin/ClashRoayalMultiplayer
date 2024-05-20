@@ -8,18 +8,18 @@
       "hash": "fbe0bf85155f42f8832205f7b3ac3df571ada33e"
     },
     "com.gustavopsantos.reflex": {
-      "version": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#8.1.1",
+      "version": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#8.2.0",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d2ec74cff94dcc4062ed246aab4007231a1d0483"
+      "hash": "8dbacf3981010a853c079197635276edc550164c"
     },
     "com.unity.addressables": {
-      "version": "1.21.20",
+      "version": "1.21.21",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.21.22",
+        "com.unity.scriptablebuildpipeline": "1.21.23",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
@@ -132,7 +132,7 @@
       }
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.21.22",
+      "version": "1.21.23",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -166,7 +166,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.8",
+      "version": "3.0.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
