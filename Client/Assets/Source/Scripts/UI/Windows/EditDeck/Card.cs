@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Source.Scripts.UI.Windows.EditDeck
 {
-    public class CardView : MonoBehaviour
+    public class Card : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _name;
         [SerializeField] private TextMeshProUGUI _description;

@@ -1,14 +1,15 @@
 using Source.Scripts.GameCore.Deck.StaticData;
 using Source.Scripts.UI.Windows.EditDeck;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Source.Scripts.GameCore.Deck
 {
-    public class Card : MonoBehaviour
+    public class CardSlot : MonoBehaviour
     {
-        [SerializeField] private CardView _cardView;
+        [FormerlySerializedAs("_cardView")] [SerializeField] private Card _card;
         
         public void Initialize(CardInfo cardInfo) =>
-            _cardView.Display(cardInfo);
+            _card.Display(cardInfo);
     }
 }

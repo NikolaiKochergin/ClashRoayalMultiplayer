@@ -17,7 +17,9 @@ namespace Source.Scripts.GameCore.Deck.Input
 
         public void OnDrop(PointerEventData eventData)
         {
-            if (eventData.pointerDrag.TryGetComponent(out CardInput card) && _deck.TryUnselect(card.Info)) 
+            Debug.Log("<<<<<<<<<<<<<<<<<<<<<");
+            
+            if (eventData.pointerDrag.TryGetComponent(out EditDeckCardInput card) && _deck.TryUnselect(card.Info)) 
                 card.transform.SetParent(_cardsContainer);
         }
     }

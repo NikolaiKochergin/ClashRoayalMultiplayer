@@ -10,14 +10,14 @@ namespace Source.Scripts.GameCore.Deck.Input
 {
     public class CardInput : MonoBehaviour, IBeginDragHandler, IDragHandler , IEndDragHandler
     {
-        [SerializeField] private CardView _cardView;
+        [SerializeField] private Card _card;
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private LayerMask _mask;
         
         private UIRoot _uiRoot;
         private IPlayerService _player;
         private Camera _camera;
-        public CardInfo Info => _cardView.Info;
+        public CardInfo Info => _card.Info;
 
         private void Awake() => 
             _camera = Camera.main;
@@ -32,22 +32,22 @@ namespace Source.Scripts.GameCore.Deck.Input
         public void OnBeginDrag(PointerEventData eventData)
         {
             _canvasGroup.blocksRaycasts = false;
-            _cardView.transform.SetParent(_uiRoot.transform);
-            _cardView.transform.SetAsLastSibling();
+            _card.transform.SetParent(_uiRoot.transform);
+            _card.transform.SetAsLastSibling();
         }
 
         public void OnDrag(PointerEventData eventData) => 
-            ((RectTransform) _cardView.transform).anchoredPosition += eventData.delta / _uiRoot.ScaleFactor;
+            ((RectTransform) _card.transform).anchoredPosition += eventData.delta / _uiRoot.ScaleFactor;
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            _cardView.transform.SetParent(transform);
-            _cardView.transform.localPosition = Vector3.zero;
+            _card.transform.SetParent(transform);
+            _card.transform.localPosition = Vector3.zero;
 
             if (TryGetSpawnPositionFor(eventData.position, out Vector3 spawnPosition))
             {
-                CardInfo cardInfo = _cardView.Info;
-                _cardView.Display(_player.NextCard);
+                CardInfo cardInfo = _card.Info;
+                _card.Display(_player.NextCard);
                 _player.SpawnUnit(cardInfo, spawnPosition);
             }
             

@@ -9,7 +9,7 @@ namespace Source.Scripts.UI.Windows.EditDeck
 {
     public class DeckView : MonoBehaviour
     {
-        [SerializeField] private Card _cardPrefab;
+        [SerializeField] private CardSlot _cardPrefab;
         [SerializeField] private Transform _cardsContainer;
         
         private IUIFactory _factory;
