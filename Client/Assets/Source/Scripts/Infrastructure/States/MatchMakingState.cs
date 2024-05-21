@@ -3,7 +3,6 @@ using Source.Scripts.Infrastructure.Services.StaticData;
 using Source.Scripts.Infrastructure.States.Machine;
 using Source.Scripts.Multiplayer;
 using Source.Scripts.UI.Services.Windows;
-using Source.Scripts.UI.Windows;
 using UnityEngine.Scripting;
 
 namespace Source.Scripts.Infrastructure.States
@@ -39,17 +38,14 @@ namespace Source.Scripts.Infrastructure.States
         {
             _multiplayer.StartGameHappened -= OnStartGameHappened;
             _multiplayer.CancelStartHappened -= OnCancelStartHappened;
-            _windows.CloseWindow(WindowId.MatchMaking);
         }
 
-        private async UniTaskVoid OnEnter()
-        {
+        private async UniTaskVoid OnEnter() => 
             await _multiplayer.Connect();
-            await _windows.OpenWindow(WindowId.MatchMaking);
-        }
 
         private void OnStartGameHappened()
         {
+            _windows.CloseAll();
             _gameStateMachine.Enter<LoadLevelState, string>(_staticData.ForBattleScene());
         }
 

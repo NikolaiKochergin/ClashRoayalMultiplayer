@@ -12,8 +12,11 @@ namespace Source.Scripts.Infrastructure.States
         public AuthorizationState(IWindowService windows) => 
             _windows = windows;
 
-        public void Enter() => 
+        public void Enter()
+        {
+            _windows.OpenWindow(WindowId.Background);
             _windows.OpenWindow(WindowId.Authorization);
+        }
 
         public void Exit() => 
             _windows.CloseWindow(WindowId.Authorization);

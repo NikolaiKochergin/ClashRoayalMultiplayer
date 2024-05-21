@@ -8,7 +8,7 @@
         Lobby = 3,
         EditDeck = 4,
         LockScreen = 5,
-        MatchMaking = 6,
-        Battle = 7,
+        Battle = 6,
+        Background = 7,
     }
 }

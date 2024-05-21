@@ -45,13 +45,13 @@ MonoBehaviour:
       m_EditorAssetChanged: 0
   - <WindowId>k__BackingField: 6
     <Reference>k__BackingField:
-      m_AssetGUID: cb8dc1b4adb40bf49a132e7d949f5876
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-  - <WindowId>k__BackingField: 7
-    <Reference>k__BackingField:
       m_AssetGUID: 1b0fecaf057564446ae225b8dd09a7ea
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 1
+  - <WindowId>k__BackingField: 7
+    <Reference>k__BackingField:
+      m_AssetGUID: 7a04b70abd516274e8e3c65a3bd597f1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0

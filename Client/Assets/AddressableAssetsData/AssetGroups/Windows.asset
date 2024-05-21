@@ -42,13 +42,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cb8dc1b4adb40bf49a132e7d949f5876
-    m_Address: Window_MatchMaking
+  - m_GUID: 1b0fecaf057564446ae225b8dd09a7ea
+    m_Address: Window_Battle
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1b0fecaf057564446ae225b8dd09a7ea
-    m_Address: Window_Battle
+  - m_GUID: 7a04b70abd516274e8e3c65a3bd597f1
+    m_Address: Window_Background
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

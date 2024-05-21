@@ -25,10 +25,5 @@ namespace Source.Scripts.UI.Windows
 
         private void SetMainCamera() => 
             _canvas.worldCamera = _camera.Main;
-
-#if UNITY_EDITOR
-        private void Reset() => 
-            _canvas = GetComponent<Canvas>();
-#endif
     }
 }

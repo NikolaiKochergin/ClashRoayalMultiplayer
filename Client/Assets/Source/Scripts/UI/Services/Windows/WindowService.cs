@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Source.Scripts.UI.Factory;
 using Source.Scripts.UI.Windows;
@@ -27,7 +28,8 @@ namespace Source.Scripts.UI.Services.Windows
 
         public void CloseAll()
         {
-            foreach (WindowId id in _openedWindows.Keys) 
+            List<WindowId> ids = _openedWindows.Keys.ToList();
+            foreach (WindowId id in ids) 
                 CloseWindow(id);
         }
     }

@@ -27,8 +27,7 @@ namespace Source.Scripts.Infrastructure.States
             _deck.LoadDeck(OnDeckLoaded);
         }
 
-        public void Exit() => 
-            _windows.CloseWindow(WindowId.Lobby);
+        public void Exit() { }
 
         private void OnDeckLoaded()
         {

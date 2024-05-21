@@ -247,11 +247,11 @@ RectTransform:
   - {fileID: 2990629968332059519}
   m_Father: {fileID: 1192330702524894106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 415, y: 585}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3884835849567333764
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b76446236559e4a7ebfbdc6519fa9d07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73d8983007ddd4830baf7ecba1debd74, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -592,6 +592,7 @@ GameObject:
   - component: {fileID: 7012673370626678000}
   - component: {fileID: 7990637976580645306}
   - component: {fileID: 4313504598187086532}
+  - component: {fileID: 7748660714019319689}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -634,11 +635,11 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: 0
   m_MinHeight: -1
-  m_PreferredWidth: -1
+  m_PreferredWidth: 400
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
-  m_LayoutPriority: 1
+  m_LayoutPriority: 0
 --- !u!114 &7990637976580645306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,7 +667,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _card: {fileID: 1178420571463612311}
   _canvasGroup: {fileID: 3833247370827591875}
+--- !u!114 &7748660714019319689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650979231485500415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454387d704a64c2e87e64ffe76688c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _layoutElement: {fileID: 7012673370626678000}
+  _maxSize: {x: 230, y: 0}
+  _expandDuration: 0.5
 --- !u!1 &8699930089546875757
 GameObject:
   m_ObjectHideFlags: 0
