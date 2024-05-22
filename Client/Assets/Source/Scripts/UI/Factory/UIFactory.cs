@@ -72,6 +72,7 @@ namespace Source.Scripts.UI.Factory
             UIRoot = Object.Instantiate(uiRootPrefab).GetComponent<UIRoot>();
             AttributeInjector.Inject(UIRoot, _container);
             Object.DontDestroyOnLoad(UIRoot);
+
             _container = _container.Scope(builder => builder.AddSingleton(UIRoot));
         }
     }

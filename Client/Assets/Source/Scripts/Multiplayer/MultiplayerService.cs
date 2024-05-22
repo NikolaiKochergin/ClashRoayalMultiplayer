@@ -18,6 +18,7 @@ namespace Source.Scripts.Multiplayer
         private const string GetReady = "GetReady";
         private const string StartGame = "Start";
         private const string CancelStart = "CancelStart";
+        private const string StartTick = "StartTick";
         
         private readonly IAuthorizationService _authorization;
         
@@ -32,6 +33,7 @@ namespace Source.Scripts.Multiplayer
         public IReadOnlyList<string> EnemyCardIDs { get; private set; }
 
         public event Action GetReadyHappened;
+        public event Action<TickData> StartTickHappened;
         public event Action StartGameHappened;
         public event Action CancelStartHappened;
 
@@ -53,6 +55,7 @@ namespace Source.Scripts.Multiplayer
             
             _room = await _client.JoinOrCreate<GameRoomState>(RoomName, data);
             _room.OnMessage<string>(GetReady, _ => GetReadyHappened?.Invoke());
+            _room.OnMessage<string>(StartTick, tick => StartTickHappened?.Invoke(JsonUtility.FromJson<TickData>(tick)));
             _room.OnMessage<string>(CancelStart, _ => CancelStartHappened?.Invoke());
             _room.OnMessage<string>(StartGame, decksJson =>
             {

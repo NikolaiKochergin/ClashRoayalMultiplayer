@@ -5,4 +5,5 @@ export namespace Library{
     export const getReady = "GetReady";
     export const start = "Start";
     export const cancelStart = "CancelStart";
+    export const StartTick = "StartTick";
 }

@@ -1,4 +1,5 @@
-﻿using Reflex.Attributes;
+﻿using DG.Tweening;
+using Reflex.Attributes;
 using Source.Scripts.GameCore.Battle.Services.Player;
 using Source.Scripts.UI.Windows.EditDeck;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Source.Scripts.UI.Windows.Battle
         private void Start()
         {
             DisplayCards();
+            ShowAppearAnimation();
             _player.NextCardUpdated += DisplayNextCard;
         }
 
@@ -33,5 +35,10 @@ namespace Source.Scripts.UI.Windows.Battle
 
         private void DisplayNextCard() => 
             _nextUnitPreview.Display(_player.NextCard);
+
+        private void ShowAppearAnimation() =>
+            ((RectTransform)transform)
+                .DOAnchorPosY(0, 0.8f)
+                .OnKill(() => ((RectTransform)transform).anchoredPosition = Vector2.zero);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Source.Scripts.Multiplayer.Data;
 
 namespace Source.Scripts.Multiplayer
 {
@@ -13,5 +14,6 @@ namespace Source.Scripts.Multiplayer
         IReadOnlyList<string> EnemyCardIDs { get; }
         UniTask Connect();
         UniTask Leave();
+        event Action<TickData> StartTickHappened;
     }
 }

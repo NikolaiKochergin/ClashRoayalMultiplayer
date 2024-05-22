@@ -7,6 +7,8 @@ export class GameRoom extends Room<GameRoomState> {
   maxClients = 2;
   playersDeck = new Map();
   awaitStart: Delayed;
+  startTimer: Delayed;
+  tickCount: number = 0;
   gameIsStarted: boolean = false;
 
   onCreate (options: any) {
@@ -29,9 +31,7 @@ export class GameRoom extends Room<GameRoomState> {
     }
     this.state.createPlayer(client.sessionId);
 
-    if(this.clients.length < 1){
-      return;
-    }
+    //if(this.clients.length < 2) return;
 
     this.broadcast(Library.getReady);
     this.awaitStart = this.clock.setTimeout(()=>{
@@ -46,6 +46,16 @@ export class GameRoom extends Room<GameRoomState> {
       } catch (error) {
         this.broadcast(Library.cancelStart);
       }
+    }, 1000);
+
+    this.startTimer = this.clock.setInterval(() => {
+      this.tickCount++;
+      this.broadcast(Library.StartTick, JSON.stringify({
+        tick: this.tickCount,
+        time: this.clock.elapsedTime
+      }));
+      if(this.tickCount > 9)
+        this.startTimer.clear();
     }, 1000);
   }
 
