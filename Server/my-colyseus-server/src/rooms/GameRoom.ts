@@ -13,8 +13,19 @@ export class GameRoom extends Room<GameRoomState> {
 
   onCreate (options: any) {
     console.log("Game Room created!");
-
     this.setState(new GameRoomState());
+
+    this.onMessage(Library.Spawn, (client, data) => {
+      const spawnData = JSON.parse(data.json);
+      if(this.playersDeck.get(client.id).includes(spawnData.cardID)) {
+        spawnData.serverTime = this.clock.elapsedTime;
+        const json = JSON.stringify(spawnData);
+        client.send(Library.SpawnPlayer, json);
+        this.broadcast(Library.SpawnEnemy, json, { except: client });
+      } else {
+        client.send(Library.Cheat);
+      }
+    });
   }
 
   async onJoin (client: Client, options: any) {
@@ -31,7 +42,7 @@ export class GameRoom extends Room<GameRoomState> {
     }
     this.state.createPlayer(client.sessionId);
 
-    //if(this.clients.length < 2) return;
+    if(this.clients.length < 2) return;
 
     this.broadcast(Library.getReady);
     this.awaitStart = this.clock.setTimeout(()=>{

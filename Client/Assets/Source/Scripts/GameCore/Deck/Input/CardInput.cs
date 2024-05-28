@@ -48,7 +48,7 @@ namespace Source.Scripts.GameCore.Deck.Input
             {
                 CardInfo cardInfo = _card.Info;
                 _card.Display(_player.NextCard);
-                _player.SpawnUnit(cardInfo, spawnPosition);
+                _player.SendSpawn(cardInfo, spawnPosition);
             }
             
             _canvasGroup.blocksRaycasts = true;

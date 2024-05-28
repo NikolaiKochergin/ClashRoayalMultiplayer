@@ -12,7 +12,7 @@ namespace Source.Scripts.GameCore.Battle.Services.Player
         IReadOnlyList<CardInfo> InHandCards { get; }
         CardInfo NextCard { get; }
         void Initialize(IReadOnlyTeam enemyTeam);
-        UniTask SpawnUnit(CardInfo card, Vector3 position);
         event Action NextCardUpdated;
+        UniTask SendSpawn(CardInfo card, Vector3 spawnPoint);
     }
 }

@@ -41,6 +41,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
+      <HologramReference>k__BackingField:
+        m_AssetGUID: d1b8f7fb2879a274d8baeb6d18211653
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u043B\u0443\u0447\u043D\u0438\u043A."
     - <Name>k__BackingField: Warrior
@@ -53,6 +58,11 @@ MonoBehaviour:
         m_EditorAssetChanged: 1
       <UnitReference>k__BackingField:
         m_AssetGUID: b238203c51b71ce45a25eaf1ffeb6398
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      <HologramReference>k__BackingField:
+        m_AssetGUID: f44d28929f559824594eafe487d2cf2f
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
@@ -71,6 +81,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: 81f5f6cd897f4514580aca6a170872c2
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0439
         \u0433\u043E\u043B\u0435\u043C."
     - <Name>k__BackingField: Archer Elder
@@ -86,6 +101,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: d1b8f7fb2879a274d8baeb6d18211653
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u043B\u0443\u0447\u043D\u0438\u043A
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Warrior Elder
@@ -101,6 +121,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: f44d28929f559824594eafe487d2cf2f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u043E\u0438\u043D
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Golem Elder
@@ -116,6 +141,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: 81f5f6cd897f4514580aca6a170872c2
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u0433\u043E\u043B\u0435\u043C
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Archer Grand Elder
@@ -131,6 +161,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: d1b8f7fb2879a274d8baeb6d18211653
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
         \u043B\u0443\u0447\u043D\u0438\u043A \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Warrior Grand Elder
@@ -146,6 +181,11 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: f44d28929f559824594eafe487d2cf2f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
         \u0432\u043E\u0438\u043D \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
     - <Name>k__BackingField: Golem Grand Elder
@@ -158,6 +198,11 @@ MonoBehaviour:
         m_EditorAssetChanged: 1
       <UnitReference>k__BackingField:
         m_AssetGUID: 516275d71bd78364296e47afc5324507
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
+      <HologramReference>k__BackingField:
+        m_AssetGUID: 81f5f6cd897f4514580aca6a170872c2
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1

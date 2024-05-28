@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Source.Scripts.GameCore.Battle.UnitLogic.Data;
 using Source.Scripts.Multiplayer.Data;
 
 namespace Source.Scripts.Multiplayer
@@ -15,5 +16,9 @@ namespace Source.Scripts.Multiplayer
         UniTask Connect();
         UniTask Leave();
         event Action<TickData> StartTickHappened;
+        void SendMessage(string key, Dictionary<string, string> data);
+        event Action<SpawnData> SpawnPlayerHappened;
+        event Action<SpawnData> SpawnEnemyHappened;
+        event Action CheatHappened;
     }
 }
