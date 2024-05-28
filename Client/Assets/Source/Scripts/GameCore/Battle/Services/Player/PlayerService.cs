@@ -79,18 +79,24 @@ namespace Source.Scripts.GameCore.Battle.Services.Player
 
         private void OnSpawnPlayerHappened(SpawnData spawnData)
         {
+            CardInfo card = _staticData.ForCard(spawnData.cardID);
+            float spawnDelay = _multiplayer.GetConvertedTime(spawnData.serverTime) - Time.time;
+            if(spawnDelay < 0)
+                Debug.LogError("Недостижимая величина задержки.");
+            else
+                SpawnUnit(card, new Vector3(spawnData.x, spawnData.y, spawnData.z), spawnDelay).Forget();
+        }
+
+        private async UniTaskVoid SpawnUnit(CardInfo card, Vector3 spawnPoint, double spawnDelay)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(spawnDelay));
+            
             if (_holograms.Count > 0)
             {
                 UnitHologram hologram = _holograms.Dequeue();
                 Object.Destroy(hologram.gameObject);
             }
             
-            CardInfo card = _staticData.ForCard(spawnData.cardID);
-            SpawnUnit(card, new Vector3(spawnData.x, spawnData.y, spawnData.z)).Forget();
-        }
-
-        private async UniTaskVoid SpawnUnit(CardInfo card, Vector3 spawnPoint)
-        {
             UnitBase unit = await _factory.Create<UnitBase>(card.UnitReference);
             unit.transform.position = spawnPoint;
             unit.Construct(_enemyTeam);

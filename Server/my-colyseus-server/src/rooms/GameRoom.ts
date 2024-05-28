@@ -18,7 +18,7 @@ export class GameRoom extends Room<GameRoomState> {
     this.onMessage(Library.Spawn, (client, data) => {
       const spawnData = JSON.parse(data.json);
       if(this.playersDeck.get(client.id).includes(spawnData.cardID)) {
-        spawnData.serverTime = this.clock.elapsedTime;
+        spawnData.serverTime = this.clock.elapsedTime + 1000;
         const json = JSON.stringify(spawnData);
         client.send(Library.SpawnPlayer, json);
         this.broadcast(Library.SpawnEnemy, json, { except: client });

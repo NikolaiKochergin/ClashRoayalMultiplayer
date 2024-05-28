@@ -90,6 +90,9 @@ namespace Source.Scripts.Multiplayer
         public void SendMessage(string key, Dictionary<string, string> data) => 
             _room.Send(key, data);
 
+        public float GetConvertedTime(uint serverTime) =>
+            serverTime / 1000f + _offset;
+
         private TickData TickData(string tick)
         {
             TickData data = JsonUtility.FromJson<TickData>(tick);
@@ -103,9 +106,6 @@ namespace Source.Scripts.Multiplayer
             
             return data;
         }
-
-        private float GetConvertedTime(uint serverTime) =>
-            serverTime / 1000f + _offset;
 
         public async UniTask Leave()
         {

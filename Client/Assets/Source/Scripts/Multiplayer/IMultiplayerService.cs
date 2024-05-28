@@ -20,5 +20,6 @@ namespace Source.Scripts.Multiplayer
         event Action<SpawnData> SpawnPlayerHappened;
         event Action<SpawnData> SpawnEnemyHappened;
         event Action CheatHappened;
+        float GetConvertedTime(uint serverTime);
     }
 }
