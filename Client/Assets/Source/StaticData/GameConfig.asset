@@ -128,7 +128,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u043E\u0438\u043D
         \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
-    - <Name>k__BackingField: Golem Elder
+    - <Name>k__BackingField: Vampire Bat
       <Id>k__BackingField: 6
       <IconReference>k__BackingField:
         m_AssetGUID: c95c9c344c01c2a49af5c7eb9fca5a2b
@@ -137,12 +137,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         m_EditorAssetChanged: 1
       <UnitReference>k__BackingField:
-        m_AssetGUID: 516275d71bd78364296e47afc5324507
+        m_AssetGUID: 69c1a4e90ac523e448614bcafe49d24e
         m_SubObjectName: 
         m_SubObjectType: 
-        m_EditorAssetChanged: 1
+        m_EditorAssetChanged: 0
       <HologramReference>k__BackingField:
-        m_AssetGUID: 81f5f6cd897f4514580aca6a170872c2
+        m_AssetGUID: 2cea5b8e8d93d1047999668ca5b94fa8
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       <Description>k__BackingField: "\u042D\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0438\u0439
         \u0432\u043E\u0438\u043D \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430."
-    - <Name>k__BackingField: Golem Grand Elder
+    - <Name>k__BackingField: Bee
       <Id>k__BackingField: 9
       <IconReference>k__BackingField:
         m_AssetGUID: 866839d3e15094546b7783f523ea81cd
@@ -197,12 +197,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         m_EditorAssetChanged: 1
       <UnitReference>k__BackingField:
-        m_AssetGUID: 516275d71bd78364296e47afc5324507
+        m_AssetGUID: de84922621b74ff4886d662068eab488
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
       <HologramReference>k__BackingField:
-        m_AssetGUID: 81f5f6cd897f4514580aca6a170872c2
+        m_AssetGUID: 29bedad6f9011e84d9af45badcd14f05
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1

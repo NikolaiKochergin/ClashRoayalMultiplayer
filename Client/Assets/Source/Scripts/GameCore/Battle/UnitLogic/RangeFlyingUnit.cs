@@ -32,7 +32,9 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic
                 .Build();
             _brain = new RangeUnitBrain(this, _fsm, enemyTeam, _target, _attack);
         }
-        
+
+        public override void Warp(Vector3 spawnPoint) => transform.position = spawnPoint;
+
         private void Update()
         {
             if(Health.CurrentValue != 0 && _brain != null)

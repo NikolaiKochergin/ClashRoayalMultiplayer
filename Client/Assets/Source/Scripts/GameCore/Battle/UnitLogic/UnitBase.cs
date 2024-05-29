@@ -36,7 +36,10 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic
             _health.ApplyDamage(value);
         }
 
+        public abstract void Warp(Vector3 spawnPoint);
+
 #if UNITY_EDITOR
+
         private void OnDrawGizmos()
         {
             Handles.color = Color.blue;

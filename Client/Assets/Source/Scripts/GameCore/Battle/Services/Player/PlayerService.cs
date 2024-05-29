@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cysharp.Threading.Tasks;
 using Reflex.Extensions;
 using Source.Scripts.Extensions;
 using Source.Scripts.GameCore.Battle.MapLogic;
 using Source.Scripts.GameCore.Battle.UnitLogic;
 using Source.Scripts.GameCore.Battle.UnitLogic.Data;
-using Source.Scripts.GameCore.Battle.UnitLogic.UI;
 using Source.Scripts.GameCore.Deck.StaticData;
 using Source.Scripts.Infrastructure.Services.Factory;
 using Source.Scripts.Infrastructure.Services.StaticData;
@@ -98,7 +96,7 @@ namespace Source.Scripts.GameCore.Battle.Services.Player
             }
             
             UnitBase unit = await _factory.Create<UnitBase>(card.UnitReference);
-            unit.transform.position = spawnPoint;
+            unit.Warp(spawnPoint);
             unit.Construct(_enemyTeam);
             _team.Add(unit);
         }

@@ -1,0 +1,8 @@
+version: '1'
+
+services:
+  my-colyseus-server:
+    build: ./my-colyseus-server
+    container_name: my-colyseus-server
+    ports:
+      - '2666:2666'

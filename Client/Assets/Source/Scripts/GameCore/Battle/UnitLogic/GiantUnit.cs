@@ -32,7 +32,9 @@ namespace Source.Scripts.GameCore.Battle.UnitLogic
                 .Build();
             _brain = new GiantUnitBrain(this, _fsm, enemyTeam, _target);
         }
-        
+
+        public override void Warp(Vector3 spawnPoint) => _agent.Warp(spawnPoint);
+
         private void Update()
         {
             if(Health.CurrentValue != 0 && _brain != null)

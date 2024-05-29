@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed729989615d4b4db072e1e8c41076c, type: 3}
   m_Name: ServerSettings
   m_EditorClassIdentifier: 
-  colyseusServerAddress: localhost
+  colyseusServerAddress: 147.45.146.243
   colyseusServerPort: 2666
   useSecureProtocol: 0
   _requestHeaders: []

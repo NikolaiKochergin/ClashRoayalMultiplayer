@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using Reflex.Extensions;
 using Source.Scripts.GameCore.Battle.MapLogic;
 using Source.Scripts.GameCore.Battle.UnitLogic;
@@ -53,13 +54,19 @@ namespace Source.Scripts.GameCore.Battle.Services.Enemy
         private void OnSpawnEnemyHappened(SpawnData spawnData)
         {
             CardInfo card = _staticData.ForCard(spawnData.cardID);
-            SpawnUnit(card, new Vector3(spawnData.x, spawnData.y, spawnData.z)).Forget();
+            float spawnDelay = _multiplayer.GetConvertedTime(spawnData.serverTime) - Time.time;
+            if(spawnDelay < 0)
+                Debug.LogError("Недостижимая величина задержки.");
+            else
+                SpawnUnit(card, new Vector3(spawnData.x, spawnData.y, spawnData.z), spawnDelay).Forget();
         }
         
-        private async UniTaskVoid SpawnUnit(CardInfo card, Vector3 spawnPoint)
+        private async UniTaskVoid SpawnUnit(CardInfo card, Vector3 spawnPoint, double spawnDelay)
         {
+            await UniTask.Delay(TimeSpan.FromSeconds(spawnDelay));
+            
             UnitBase unit = await _factory.Create<UnitBase>(card.UnitReference);
-            unit.transform.position = spawnPoint * -1;
+            unit.Warp(spawnPoint * -1);
             unit.transform.rotation = Quaternion.Euler(0, 180, 0);
             unit.Construct(_playerTeam);
             _team.Add(unit);
