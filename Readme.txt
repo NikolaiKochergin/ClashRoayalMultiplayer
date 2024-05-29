@@ -47,4 +47,18 @@ https://github.com/NikolaiKochergin/EGMulty_ClashRoyal_Client/blob/week-8/Assets
 6. Добавил возможность передвижения юнитов через Transform
 https://github.com/NikolaiKochergin/EGMulty_ClashRoyal_Client/blob/week-8/Assets/Source/Scripts/GameCore/UnitLogic/TransformMover.cs
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
+Week-11
+
+1. На этой неделе заморочился с архитектурой. Перевел проект на Addressables. Добавил DI контейнер Reflex. Установка всех нужных сервисов и состояний игры происходит тут: https://github.com/NikolaiKochergin/ClashRoayalMultiplayer/blob/main/Client/Assets/Source/Scripts/Infrastructure/ProjectInstaller.cs
+
+2. Логика работы игрока сосредоточена тут: https://github.com/NikolaiKochergin/ClashRoayalMultiplayer/blob/main/Client/Assets/Source/Scripts/GameCore/Battle/Services/Player/PlayerService.cs
+
+3. Логика работы противника тут: https://github.com/NikolaiKochergin/ClashRoayalMultiplayer/blob/main/Client/Assets/Source/Scripts/GameCore/Battle/Services/Enemy/EnemyService.cs
+
+4. Для создания матча не стал делать отдельный сервис, сделал просто гейм стейт: https://github.com/NikolaiKochergin/ClashRoayalMultiplayer/blob/main/Client/Assets/Source/Scripts/Infrastructure/States/MatchMakingState.cs
+
+5. Добавил красивый UI.
+
+6. Если подытожить, как то долго я морочился, хотел сделать все красиво и половину того что сделал уже забыл) чтобы отразить это в логе разработки. Для синхронизации сперва попробовал что то сам придумать. Но как то все слишком затягивалось, в итоге применил решение из 12 недели.
